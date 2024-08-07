@@ -31,7 +31,7 @@ namespace EspacioCaracteristica
                     Destreza = rand.Next(1, 3);
                     Fuerza = 2;
                     Armadura = rand.Next(2, 4);
-                    Magia = rand.Next(7, 11);
+                    Magia = rand.Next(5, 8);
                     break;
 
                 case "Guerrero":
