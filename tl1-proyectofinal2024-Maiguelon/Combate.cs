@@ -1,75 +1,39 @@
 using System;
-using EspacioPersonaje;
+using System.Threading.Tasks;
 using EspacioHechizo;
+using EspacioPersonaje;
+using EspacioDatos;
 
-namespace EspacioCombate
+namespace EspacioCombates
 {
-    public static class Combate
+    public static class Combates
     {
+        private static readonly Random rand = new();
 
-        // Método para iniciar un combate
-        public static Personaje IniciarCombate(Personaje p1, Personaje p2)
+        // Método para calcular el daño provocado en cada turno
+        private static int CalcularDaño(Personaje atacante, Personaje defensor)
         {
-            Random rand = new();
-            bool turnoP1 = true;
-            bool hechizoUsadoP1 = false;
-            bool hechizoUsadoP2 = false;
+            int ataque = atacante.Caracteristicas.Destreza * atacante.Caracteristicas.Fuerza * atacante.Nivel;
+            int efectividad = rand.Next(1, 101); // Valor aleatorio entre 1 y 100
+            int defensa = defensor.Caracteristicas.Armadura * defensor.Caracteristicas.Velocidad;
+            int dañoProvocado = (ataque * efectividad - defensa) / 500; // Constante de ajuste
 
-            while (p1.Caracteristicas.Salud > 0 && p2.Caracteristicas.Salud > 0)
-            {
-                if (turnoP1)
-                {
-                    if ((p1.Clase == "Mago" || p1.Clase == "Druida") && !hechizoUsadoP1)
-                    {
-                        UsarHechizo(p1, p2);
-                        hechizoUsadoP1 = true;
-                    }
-                    else
-                    {
-                        Atacar(p1, p2);
-                    }
-                }
-                else
-                {
-                    if ((p2.Clase == "Mago" || p2.Clase == "Druida") && !hechizoUsadoP2)
-                    {
-                        UsarHechizo(p2, p1);
-                        hechizoUsadoP2 = true;
-                    }
-                    else
-                    {
-                        Atacar(p2, p1);
-                    }
-                }
-
-                turnoP1 = !turnoP1; // Cambiar de turno
-
-                // Mostrar estado de salud de los personajes
-                Console.WriteLine($"{p1.Nombre}: Salud = {p1.Caracteristicas.Salud}");
-                Console.WriteLine($"{p2.Nombre}: Salud = {p2.Caracteristicas.Salud}");
-                Console.WriteLine();
-            }
-
-            Personaje ganador = p1.Caracteristicas.Salud > 0 ? p1 : p2;
-            Console.WriteLine($"El ganador del combate es: {ganador.Nombre}");
-
-            // El ganador sube de nivel
-            ganador.SubirNivel();
-            return ganador;
+            // Asegurar que el daño no sea negativo
+            return Math.Max(dañoProvocado, 0);
         }
 
-        // Método para realizar un ataque
-        private static void Atacar(Personaje atacante, Personaje defensor)
+        // Método para realizar un turno de combate
+        public static void TurnoCombate(Personaje atacante, Personaje defensor)
         {
-            Random rand = new();
-            int efectividad = rand.Next(1, 11);
-            int ataque = (atacante.Caracteristicas.Destreza * atacante.Caracteristicas.Fuerza * atacante.Nivel);
-            int defensa = (defensor.Caracteristicas.Armadura * defensor.Caracteristicas.Velocidad);
-            int danio = ((ataque * efectividad) - defensa );
+            int daño = CalcularDaño(atacante, defensor);
+            defensor.Caracteristicas.Salud -= daño;
 
-            // Capear a 50 y agregar esquivada
-            defensor.Caracteristicas.Salud -= Math.Max(danio, 1); // Asegurar que el daño no sea negativo ni cero
-            Console.WriteLine($"{atacante.Nombre} ataca a {defensor.Nombre} y causa {danio} puntos de daño.");
+            string fraseAtaque = daño > 10
+                ? Datos.ObtenerFraseAtaque(atacante.Clase, "fuerte")
+                : Datos.ObtenerFraseAtaque(atacante.Clase, "débil");
+
+            Console.WriteLine($"{atacante.Nombre} ataca a {defensor.Nombre}: {fraseAtaque.Replace("{daño}", daño.ToString())}");
+            Console.WriteLine($"{defensor.Nombre} tiene {defensor.Caracteristicas.Salud} puntos de salud restantes.");
         }
 
         // Método para usar un hechizo
@@ -78,12 +42,73 @@ namespace EspacioCombate
             int nivelMagia = lanzador.Caracteristicas.Magia;
             if (nivelMagia < 0 || nivelMagia >= ListaHechizos.Hechizos.Length)
             {
-                nivelMagia = ListaHechizos.Hechizos.Length - 1;
+                Console.WriteLine($"{lanzador.Nombre} no tiene hechizos disponibles.");
+                return;
             }
 
             Hechizo hechizo = ListaHechizos.Hechizos[nivelMagia];
             objetivo.Caracteristicas.Salud -= hechizo.Danio;
-            Console.WriteLine($"{lanzador.Nombre} usa {hechizo.Nombre} y causa {hechizo.Danio} puntos de daño a {objetivo.Nombre}.");
+
+            string fraseHechizo = Datos.ObtenerFraseHechizo(lanzador.Clase, hechizo.Nombre);
+            Console.WriteLine($"{lanzador.Nombre} usa {hechizo.Nombre} y causa {hechizo.Danio} puntos de daño a {objetivo.Nombre}: {fraseHechizo}");
+            Console.WriteLine($"{objetivo.Nombre} tiene {objetivo.Caracteristicas.Salud} puntos de salud restantes.");
         }
+
+        // Método para mostrar el estado actual de un personaje
+        private static void MostrarEstado(Personaje personaje)
+        {
+            Console.WriteLine(personaje);
+        }
+
+        // Método principal para realizar un combate
+       public static void RealizarCombate(Personaje p1, Personaje p2)
+{
+    Console.WriteLine($"El combate entre {p1.Nombre} y {p2.Nombre} ha comenzado!");
+
+    bool p1Turno = true; // Determinar el turno inicial
+
+    // Usar hechizos en el primer turno
+    if (p1.Caracteristicas.Magia > 0)
+    {
+        UsarHechizo(p1, p2);
+        p1Turno = false; // Cambiar turno
+    }
+    else if (p2.Caracteristicas.Magia > 0)
+    {
+        UsarHechizo(p2, p1);
+        p1Turno = true; // Cambiar turno
+    }
+
+    // Continuar el combate hasta que uno de los personajes sea vencido
+    while (p1.Caracteristicas.Salud > 0 && p2.Caracteristicas.Salud > 0)
+    {
+        if (p1Turno)
+        {
+            TurnoCombate(p1, p2);
+        }
+        else
+        {
+            TurnoCombate(p2, p1);
+        }
+
+        // Cambiar turno
+        p1Turno = !p1Turno;
+    }
+
+    // Determinar el ganador y mostrar el resultado
+    if (p1.Caracteristicas.Salud > 0)
+    {
+        Console.WriteLine($"{p1.Nombre} ha ganado el combate!");
+        p1.SubirNivel();
+    }
+    else
+    {
+        Console.WriteLine($"{p2.Nombre} ha ganado el combate!");
+        p2.SubirNivel();
+    }
+
+    Console.WriteLine("Fin del combate.");
+}
+
     }
 }
