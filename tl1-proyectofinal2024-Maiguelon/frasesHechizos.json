@@ -1,0 +1,5 @@
+{
+    "Mago": ["El mago {nombre} lanza {hechizo}.", "El mago {nombre} invoca {hechizo} con un gesto arcano."],
+    "Druida": ["El druida {nombre} invoca {hechizo} con el poder de la naturaleza.", "El druida {nombre} canaliza {hechizo} a través de los espíritus del bosque."]
+  }
+  

@@ -1,0 +1,19 @@
+{
+    "Mago": {
+      "alto": ["El mago {nombre} desata una poderosa explosión mágica.", "El mago {nombre} canaliza una energía arcana devastadora."],
+      "bajo": ["El mago {nombre} lanza una pequeña chispa.", "El mago {nombre} conjura un débil rayo de energía."]
+    },
+    "Guerrero": {
+      "alto": ["El guerrero {nombre} clava su filo en el pecho de su oponente.", "El guerrero {nombre} desata una serie de golpes brutales."],
+      "bajo": ["El guerrero {nombre} falla su ataque, pero logra reponerse y asestarle un golpe con el mango de su arma!", "El guerrero {nombre} hace un corte superficial."]
+    },
+    "Picaro": {
+      "alto": ["El pícaro {nombre} apuñala rápidamente en un punto vital.", "El pícaro {nombre} se mueve como una sombra y ataca con precisión mortal."],
+      "bajo": ["El pícaro {nombre} lanza un golpe rápido que apenas roza a su oponente.", "El pícaro {nombre} hace un ataque ligero y se retira rápidamente."]
+    },
+    "Druida": {
+      "alto": ["El druida {nombre} invoca las fuerzas de la naturaleza para un ataque devastador.", "El druida {nombre} canaliza el poder de la tierra y golpea con una fuerza elemental."],
+      "bajo": ["El druida {nombre} llama a pequeños espíritus de la naturaleza para un ataque.", "El druida {nombre} usa la energía del bosque para un golpe menor."]
+    }
+  }
+  
