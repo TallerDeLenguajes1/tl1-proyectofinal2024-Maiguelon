@@ -1,6 +1,6 @@
 using System;
 
-namespace EspacioCaracteristica
+namespace EspacioCaracteristica 
 {
     public class Caracteristica 
     {

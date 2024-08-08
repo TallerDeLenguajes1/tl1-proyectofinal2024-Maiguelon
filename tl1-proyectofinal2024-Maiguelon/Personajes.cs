@@ -1,5 +1,5 @@
 using System;
-using EspacioCaracteristica;
+using EspacioCaracteristica; 
 
 namespace EspacioPersonaje
 {
