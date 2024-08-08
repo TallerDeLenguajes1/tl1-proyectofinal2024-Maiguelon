@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
 using EspacioPersonaje;
+using ProyectoRPG;
 
 namespace EspacioGestionPartida
 {
-    // Clase para gestionar el guardado y la carga de la partida
     public class GestionPartida
     {
-        // Método para guardar el estado de la partida en un archivo JSON
         public void GuardarPartida(List<Personaje> personajes, string faseTorneo, string nombreArchivo)
         {
             var estado = new EstadoPartida
@@ -22,7 +21,6 @@ namespace EspacioGestionPartida
             File.WriteAllText(nombreArchivo, json);
         }
 
-        // Método para cargar la partida
         public EstadoPartida CargarPartida(string nombreArchivo)
         {
             if (!File.Exists(nombreArchivo))
@@ -36,12 +34,5 @@ namespace EspacioGestionPartida
         {
             return File.Exists(nombreArchivo) && new FileInfo(nombreArchivo).Length > 0;
         }
-    }
-
-    // Clase del estado del juego guardado
-    public class EstadoPartida
-    {
-        public List<Personaje> Participantes { get; set; } = new List<Personaje>();
-        public string FaseTorneo { get; set; } = "cuartos"; // Estado inicial, puede ser "cuartos", "semis", "final"
     }
 }
