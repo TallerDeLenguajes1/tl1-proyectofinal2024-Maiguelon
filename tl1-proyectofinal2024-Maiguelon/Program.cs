@@ -10,103 +10,161 @@ namespace ProyectoRPG
     class Program
     {
         static async Task Main(string[] args)
-{
-    GestionPartida manejadorDePartidas = new GestionPartida();
-    EstadoPartida estado = new EstadoPartida(); 
-
-
-    // Verificar si hay una partida guardada
-    if (manejadorDePartidas.Existe("partida.json"))
-    {
-        Console.WriteLine("¿Desea continuar la partida guardada? (s/n)");
-        string respuesta = (Console.ReadLine() ?? "").ToLower(); // Asegurar que la entrada no sea nula
-        if (respuesta == "s")
         {
-            estado = manejadorDePartidas.CargarPartida("partida.json");
-            Console.WriteLine("Partida cargada exitosamente.");
+            GestionPartida manejadorDePartidas = new GestionPartida();
+            EstadoPartida estado = new EstadoPartida();
+
+            bool continuar = true;
+
+            while (continuar)
+            {
+                Console.Clear();
+                Console.WriteLine("Bienvenido al Torneo de Aventureros!");
+                Console.WriteLine("1. Nueva Partida");
+                Console.WriteLine("2. Cargar Partida");
+                Console.WriteLine("3. Mostrar Historial de Ganadores");
+                Console.WriteLine("4. Salir");
+                Console.Write("Seleccione una opción: ");
+
+                string opcion = Console.ReadLine() ?? "";  // Inicializa la variable opción para asegurarte de que no sea nula
+
+                if (string.IsNullOrWhiteSpace(opcion))
+                {
+                    Console.WriteLine("Opción no válida. Por favor, ingrese una opción.");
+                    continue;
+                }
+
+                switch (opcion)
+                {
+                    case "1":
+                        estado = await IniciarNuevoTorneo();
+                        manejadorDePartidas.GuardarPartida(estado.Participantes, "cuartos", "partida.json");
+                        await JugarTorneo(estado, manejadorDePartidas);
+                        break;
+
+                    case "2":
+                        if (manejadorDePartidas.Existe("partida.json"))
+                        {
+                            estado = manejadorDePartidas.CargarPartida("partida.json");
+                            Console.WriteLine("Partida cargada exitosamente.");
+                            await JugarTorneo(estado, manejadorDePartidas);
+                        }
+                        else
+                        {
+                            Console.WriteLine("No se encontró una partida guardada.");
+                        }
+                        break;
+
+                    case "3":
+                        MostrarHistorialDeGanadores();
+                        break;
+
+                    case "4":
+                        continuar = false;
+                        break;
+
+                    default:
+                        Console.WriteLine("Opción no válida. Por favor, seleccione una opción del menú.");
+                        break;
+                }
+
+                if (continuar)
+                {
+                    Console.WriteLine("Presione cualquier tecla para volver al menú principal...");
+                    Console.ReadKey();
+                }
+            }
+
+            Console.WriteLine("Gracias por jugar. ¡Hasta la próxima!");
         }
-    }
 
-    // Si no hay partida guardada o el usuario no desea continuar, iniciar un nuevo torneo
-    if (estado == null)
-    {
-        estado = await IniciarNuevoTorneo();
-        manejadorDePartidas.GuardarPartida(estado.Participantes, "cuartos", "partida.json");
-        Console.WriteLine("Partida guardada.");
-    }
-
-    // Continuar el torneo
-    while (estado.Participantes.Count > 1)
-    {
-        Console.WriteLine("Siguiente ronda del torneo...");
-        estado = await JugarRonda(estado);
-        if (PreguntarSiContinuar())
+        static async Task<EstadoPartida> IniciarNuevoTorneo()
         {
-            manejadorDePartidas.GuardarPartida(estado.Participantes, estado.FaseTorneo, "partida.json");
-            Console.WriteLine("Partida guardada.");
-            return;
+            List<Personaje> participantes = new List<Personaje>();
+            FabricaDePersonajes fabrica = new FabricaDePersonajes();
+
+            for (int i = 0; i < 8; i++)
+            {
+                var personaje = await fabrica.CrearPersonajeAsync();
+                participantes.Add(personaje);
+                Console.WriteLine($"Participante {i + 1}: {personaje.Epiteto} {personaje.Nombre}, {personaje.Edad} años");
+            }
+
+            return new EstadoPartida { Participantes = participantes, RondaActual = 1 };
         }
-    }
 
-    // Anunciar el ganador
-    if (estado.Participantes.Count == 1)
-    {
-        Console.WriteLine($"El ganador del torneo es {estado.Participantes[0].Nombre}, {estado.Participantes[0].Epiteto}.");
-        manejadorDePartidas.GuardarPartida(estado.Participantes, "ganadores", "ganadores.json");
-    }
-}
-
-// Método para iniciar un nuevo torneo
-static async Task<EstadoPartida> IniciarNuevoTorneo()
-{
-    List<Personaje> participantes = new List<Personaje>();
-    FabricaDePersonajes fabrica = new FabricaDePersonajes();
-
-    for (int i = 0; i < 8; i++)
-    {
-        var personaje = await fabrica.CrearPersonajeAsync();
-        participantes.Add(personaje);
-        Console.WriteLine($"Participante {i + 1}: {personaje.Epiteto} {personaje.Nombre}, {personaje.Edad} años");
-    }
-
-    return new EstadoPartida { Participantes = participantes, RondaActual = 1 };
-}
-
-// Método para jugar una ronda del torneo
-public static async Task<EstadoPartida> JugarRonda(EstadoPartida estado)
-{
-    List<Personaje> ganadores = new List<Personaje>();
-
-    for (int i = 0; i < estado.Participantes.Count; i += 2)
-    {
-        Console.WriteLine($"Combate entre {estado.Participantes[i].Epiteto} y {estado.Participantes[i + 1].Epiteto}");
-        
-        // Ejecuta el combate de manera asíncrona
-        await Task.Run(() => Combates.RealizarCombate(estado.Participantes[i], estado.Participantes[i + 1]));
-
-        if (estado.Participantes[i].Caracteristicas.Salud > 0)
+        static async Task JugarTorneo(EstadoPartida estado, GestionPartida manejadorDePartidas)
         {
-            ganadores.Add(estado.Participantes[i]);
+            while (estado.Participantes.Count > 1)
+            {
+                Console.WriteLine("Siguiente ronda del torneo...");
+                estado = await JugarRonda(estado);
+                if (!PreguntarSiContinuar())
+                {
+                    manejadorDePartidas.GuardarPartida(estado.Participantes, estado.FaseTorneo, "partida.json");
+                    Console.WriteLine("Partida guardada.");
+                    return;
+                }
+            }
+
+            if (estado.Participantes.Count == 1)
+            {
+                Console.WriteLine($"El ganador del torneo es {estado.Participantes[0].Nombre}, {estado.Participantes[0].Epiteto}.");
+                manejadorDePartidas.GuardarPartida(estado.Participantes, "ganadores", "ganadores.json");
+            }
         }
-        else
+
+        static void MostrarHistorialDeGanadores()
         {
-            ganadores.Add(estado.Participantes[i + 1]);
+            // Aquí se carga el historial de ganadores y se muestra
+            GestionPartida manejadorDePartidas = new GestionPartida();
+            if (manejadorDePartidas.Existe("ganadores.json"))
+            {
+                var historial = manejadorDePartidas.CargarPartida("ganadores.json").Participantes;
+                Console.WriteLine("Historial de Ganadores:");
+                foreach (var ganador in historial)
+                {
+                    Console.WriteLine($"{ganador.Epiteto} {ganador.Nombre}");
+                }
+            }
+            else
+            {
+                Console.WriteLine("No se ha encontrado ningún ganador registrado.");
+            }
         }
-    }
 
-    estado.Participantes = ganadores;
-    estado.RondaActual++;
-    return estado;
-}
+        static async Task<EstadoPartida> JugarRonda(EstadoPartida estado)
+        {
+            List<Personaje> ganadores = new List<Personaje>();
 
-// Método para preguntar si se desea continuar el torneo
-static bool PreguntarSiContinuar()
-{
-    Console.WriteLine("¿Desea continuar el torneo o guardar y salir? (continuar/guardar)");
-    string respuesta = (Console.ReadLine() ?? "").ToLower(); // Asegurar que la entrada no sea nula
-    return respuesta != "guardar";
-}
+            for (int i = 0; i < estado.Participantes.Count; i += 2)
+            {
+                Console.WriteLine($"Combate entre {estado.Participantes[i].Epiteto} y {estado.Participantes[i + 1].Epiteto}");
+                
+                // Ejecuta el combate de manera asíncrona
+                await Task.Run(() => Combates.RealizarCombate(estado.Participantes[i], estado.Participantes[i + 1]));
 
+                if (estado.Participantes[i].Caracteristicas.Salud > 0)
+                {
+                    ganadores.Add(estado.Participantes[i]);
+                }
+                else
+                {
+                    ganadores.Add(estado.Participantes[i + 1]);
+                }
+            }
+
+            estado.Participantes = ganadores;
+            estado.RondaActual++;
+            return estado;
+        }
+
+        static bool PreguntarSiContinuar()
+        {
+            Console.WriteLine("¿Desea continuar el torneo o guardar y salir? (continuar/guardar)");
+            string respuesta = (Console.ReadLine() ?? "").ToLower(); // Asegurar que la entrada no sea nula
+            return respuesta != "guardar";
+        }
     }
 
     public class EstadoPartida
@@ -116,5 +174,7 @@ static bool PreguntarSiContinuar()
         public string FaseTorneo { get; set; } = "cuartos";
     }
 }
+
+
 
 

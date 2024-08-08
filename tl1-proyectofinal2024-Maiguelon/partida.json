@@ -1,58 +1,73 @@
 {
-  "Personajes": [
+  "Participantes": [
     {
-      "Nombre": "Jaxon Hughes",
-      "Epiteto": "El Sabio",
-      "Edad": 195,
+      "Nombre": "Kaylee Jennings",
+      "Epiteto": "El \u00C1gil",
+      "Edad": 262,
       "Clase": "Picaro",
       "Caracteristicas": {
         "Velocidad": 5,
-        "Destreza": 3,
+        "Destreza": 5,
         "Fuerza": 2,
-        "Armadura": 3,
+        "Armadura": 2,
         "Salud": 100,
         "Magia": 0
       },
       "Nivel": 1
     },
     {
-      "Nombre": "Paul Dumas",
+      "Nombre": "Clara Roy",
       "Epiteto": "El Valiente",
-      "Edad": 293,
+      "Edad": 53,
       "Clase": "Druida",
       "Caracteristicas": {
         "Velocidad": 3,
         "Destreza": 2,
-        "Fuerza": 2,
-        "Armadura": 2,
+        "Fuerza": 4,
+        "Armadura": 3,
         "Salud": 100,
         "Magia": 4
       },
       "Nivel": 1
     },
     {
-      "Nombre": "Bego\u00F1a Campos",
+      "Nombre": "Nurdan Pektemek",
       "Epiteto": "El Valiente",
-      "Edad": 276,
-      "Clase": "Guerrero",
+      "Edad": 133,
+      "Clase": "Druida",
       "Caracteristicas": {
-        "Velocidad": 3,
-        "Destreza": 3,
-        "Fuerza": 4,
-        "Armadura": 4,
+        "Velocidad": 5,
+        "Destreza": 2,
+        "Fuerza": 3,
+        "Armadura": 3,
         "Salud": 100,
-        "Magia": 0
+        "Magia": 5
       },
       "Nivel": 1
     },
     {
-      "Nombre": "Trinidad Moya",
+      "Nombre": "Mehmet Koyuncu",
       "Epiteto": "El \u00C1gil",
-      "Edad": 121,
+      "Edad": 260,
+      "Clase": "Druida",
+      "Caracteristicas": {
+        "Velocidad": 3,
+        "Destreza": 3,
+        "Fuerza": 3,
+        "Armadura": 2,
+        "Salud": 100,
+        "Magia": 3
+      },
+      "Nivel": 1
+    },
+    {
+      "Nombre": "Svitolyuba Poloviy",
+      "Epiteto": "El \u00C1gil",
+      "Edad": 107,
       "Clase": "Picaro",
       "Caracteristicas": {
-        "Velocidad": 5,
-        "Destreza": 4,
+        "Velocidad": 4,
+        "Destreza": 5,
         "Fuerza": 2,
         "Armadura": 2,
         "Salud": 100,
@@ -61,9 +76,9 @@
       "Nivel": 1
     },
     {
-      "Nombre": "Mikkel Jensen",
-      "Epiteto": "El \u00C1gil",
-      "Edad": 60,
+      "Nombre": "Santiago Rivas",
+      "Epiteto": "El Fuerte",
+      "Edad": 211,
       "Clase": "Mago",
       "Caracteristicas": {
         "Velocidad": 2,
@@ -71,55 +86,41 @@
         "Fuerza": 2,
         "Armadura": 4,
         "Salud": 100,
-        "Magia": 6
+        "Magia": 5
       },
       "Nivel": 1
     },
     {
-      "Nombre": "Victoria Robledo",
-      "Epiteto": "El Valiente",
-      "Edad": 180,
-      "Clase": "Picaro",
+      "Nombre": "No\u00E9lie Roy",
+      "Epiteto": "El Fuerte",
+      "Edad": 32,
+      "Clase": "Druida",
       "Caracteristicas": {
-        "Velocidad": 5,
-        "Destreza": 4,
-        "Fuerza": 2,
-        "Armadura": 2,
-        "Salud": 100,
-        "Magia": 0
-      },
-      "Nivel": 1
-    },
-    {
-      "Nombre": "Milo Masson",
-      "Epiteto": "El Noble",
-      "Edad": 246,
-      "Clase": "Mago",
-      "Caracteristicas": {
-        "Velocidad": 1,
-        "Destreza": 2,
-        "Fuerza": 2,
-        "Armadura": 4,
-        "Salud": 100,
-        "Magia": 7
-      },
-      "Nivel": 1
-    },
-    {
-      "Nombre": "Doroteya Malyarenko",
-      "Epiteto": "El Valiente",
-      "Edad": 129,
-      "Clase": "Picaro",
-      "Caracteristicas": {
-        "Velocidad": 4,
-        "Destreza": 5,
-        "Fuerza": 2,
+        "Velocidad": 3,
+        "Destreza": 3,
+        "Fuerza": 3,
         "Armadura": 3,
         "Salud": 100,
-        "Magia": 0
+        "Magia": 5
+      },
+      "Nivel": 1
+    },
+    {
+      "Nombre": "\u0645\u062D\u0645\u062F\u0639\u0644\u06CC \u0632\u0627\u0631\u0639\u06CC",
+      "Epiteto": "El \u00C1gil",
+      "Edad": 49,
+      "Clase": "Druida",
+      "Caracteristicas": {
+        "Velocidad": 5,
+        "Destreza": 3,
+        "Fuerza": 3,
+        "Armadura": 3,
+        "Salud": 100,
+        "Magia": 3
       },
       "Nivel": 1
     }
   ],
+  "RondaActual": 0,
   "FaseTorneo": "cuartos"
 }
