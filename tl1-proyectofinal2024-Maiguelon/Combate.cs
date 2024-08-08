@@ -32,9 +32,13 @@ namespace EspacioCombates
                 ? Datos.ObtenerFraseAtaque(atacante.Clase, "alto")
                 : Datos.ObtenerFraseAtaque(atacante.Clase, "bajo");
 
-            Console.WriteLine($"{atacante.Nombre} ataca a {defensor.Nombre}: {fraseAtaque.Replace("{daño}", daño.ToString())}");
+            // Reemplazar "{nombre}" con el nombre del atacante
+            fraseAtaque = fraseAtaque.Replace("{nombre}", atacante.Nombre);
+
+            Console.WriteLine($"{atacante.Nombre} ataca a {defensor.Nombre}: {fraseAtaque}");
             Console.WriteLine($"{defensor.Nombre} tiene {defensor.Caracteristicas.Salud} puntos de salud restantes.");
         }
+
 
         // Método para usar un hechizo
         private static void UsarHechizo(Personaje lanzador, Personaje objetivo)
