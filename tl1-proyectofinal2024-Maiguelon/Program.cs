@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using EspacioPersonaje;
-using EspacioFabricaDePersonajes;
 using EspacioCombates;
-using EspacioHistorialJson;
+using EspacioGestionPartida;
 
 namespace ProyectoRPG
 {
@@ -12,85 +10,102 @@ namespace ProyectoRPG
     {
         static async Task Main(string[] args)
         {
-            FabricaDePersonajes fabrica = new FabricaDePersonajes();
-            List<Personaje> participantes = new List<Personaje>();
+            GestionPartida manejadorDePartidas = new GestionPartida();
+            EstadoPartida estado = null;
 
-            // Generar 8 personajes para el torneo
+            // Verificar si hay una partida guardada
+            if (manejadorDePartidas.Existe("partida.json"))
+            {
+                Console.WriteLine("¿Desea continuar la partida guardada? (s/n)");
+                string respuesta = Console.ReadLine()?.ToLower();
+                if (respuesta == "s")
+                {
+                    estado = manejadorDePartidas.CargarPartida("partida.json");
+                    Console.WriteLine("Partida cargada exitosamente.");
+                }
+            }
+
+            // Si no hay partida guardada o el usuario no desea continuar, iniciar un nuevo torneo
+            if (estado == null)
+            {
+                estado = await IniciarNuevoTorneo();
+                manejadorDePartidas.GuardarPartida(estado.Participantes, estado.FaseTorneo, "partida.json");
+                Console.WriteLine("Partida guardada.");
+            }
+
+            // Continuar el torneo
+            while (estado.Participantes.Count > 1)
+            {
+                Console.WriteLine("Siguiente ronda del torneo...");
+                estado = await JugarRonda(estado);
+                if (!PreguntarSiContinuar())
+                {
+                    manejadorDePartidas.GuardarPartida(estado.Participantes, estado.FaseTorneo, "partida.json");
+                    Console.WriteLine("Partida guardada.");
+                    return;
+                }
+            }
+
+            // Anunciar el ganador
+            if (estado.Participantes.Count == 1)
+            {
+                Console.WriteLine($"El ganador del torneo es {estado.Participantes[0].Nombre} ({estado.Participantes[0].Epiteto})");
+                manejadorDePartidas.GuardarPartida(estado.Participantes, "ganadores.json");
+            }
+        }
+
+        static async Task<EstadoPartida> IniciarNuevoTorneo()
+        {
+            List<Personaje> participantes = new List<Personaje>();
+            FabricaDePersonajes fabrica = new FabricaDePersonajes();
+
             for (int i = 0; i < 8; i++)
             {
-                participantes.Add(await fabrica.CrearPersonajeAsync());
+                var personaje = await fabrica.CrearPersonajeAsync();
+                participantes.Add(personaje);
+                Console.WriteLine($"{personaje.Epiteto} {personaje.Nombre}, {personaje.Edad} años");
             }
 
-            // Presentar los enfrentamientos de cuartos de final
-            Console.WriteLine("Cuartos de Final:");
-            for (int i = 0; i < 4; i++)
+            return new EstadoPartida { Participantes = participantes, FaseTorneo = "cuartos" };
+        }
+
+        static async Task<EstadoPartida> JugarRonda(EstadoPartida estado)
+        {
+            List<Personaje> ganadores = new List<Personaje>();
+
+            for (int i = 0; i < estado.Participantes.Count; i += 2)
             {
-                Console.WriteLine($"{participantes[i * 2].Epiteto} vs {participantes[i * 2 + 1].Epiteto}");
+                Console.WriteLine($"Combate entre {estado.Participantes[i].Epiteto} y {estado.Participantes[i + 1].Epiteto}");
+                Combates.RealizarCombate(estado.Participantes[i], estado.Participantes[i + 1]);
+                if (estado.Participantes[i].Caracteristicas.Salud > 0)
+                {
+                    ganadores.Add(estado.Participantes[i]);
+                }
+                else
+                {
+                    ganadores.Add(estado.Participantes[i + 1]);
+                }
             }
 
-            // Ejecutar cuartos de final
-            List<Personaje> ganadoresCuartos = new List<Personaje>();
-            for (int i = 0; i < 4; i++)
-            {
-                Combates.RealizarCombate(participantes[i * 2], participantes[i * 2 + 1]);
-                Personaje ganador = participantes[i * 2].Caracteristicas.Salud > 0 ? participantes[i * 2] : participantes[i * 2 + 1];
-                ganadoresCuartos.Add(ganador);
-
-                // Preguntar si continuar o guardar y salir
-                if (!PreguntarSiContinuar()) return;
-            }
-
-            // Presentar semifinales
-            Console.WriteLine("Semifinales:");
-            for (int i = 0; i < 2; i++)
-            {
-                Console.WriteLine($"{ganadoresCuartos[i * 2].Epiteto} vs {ganadoresCuartos[i * 2 + 1].Epiteto}");
-            }
-
-            // Ejecutar semifinales
-            List<Personaje> ganadoresSemis = new List<Personaje>();
-            for (int i = 0; i < 2; i++)
-            {
-                Combates.RealizarCombate(ganadoresCuartos[i * 2], ganadoresCuartos[i * 2 + 1]);
-                Personaje ganador = ganadoresCuartos[i * 2].Caracteristicas.Salud > 0 ? ganadoresCuartos[i * 2] : ganadoresCuartos[i * 2 + 1];
-                ganadoresSemis.Add(ganador);
-
-                // Preguntar si continuar o guardar y salir
-                if (!PreguntarSiContinuar()) return;
-            }
-
-            // Presentar la final
-            Console.WriteLine("Final:");
-            Console.WriteLine($"{ganadoresSemis[0].Epiteto} vs {ganadoresSemis[1].Epiteto}");
-
-            // Ejecutar la final
-            Combates.RealizarCombate(ganadoresSemis[0], ganadoresSemis[1]);
-            Personaje campeon = ganadoresSemis[0].Caracteristicas.Salud > 0 ? ganadoresSemis[0] : ganadoresSemis[1];
-
-            // Anunciar y guardar el campeón
-            Console.WriteLine($"¡{campeon.Nombre}, {campeon.Epiteto}, es el nuevo campeón!");
-            GuardarCampeon(campeon);
+            estado.Participantes = ganadores;
+            estado.RondaActual++;
+            return estado;
         }
 
         static bool PreguntarSiContinuar()
         {
             Console.WriteLine("¿Desea continuar el torneo o guardar y salir? (continuar/guardar)");
-            string? respuesta = Console.ReadLine();
-            if (respuesta?.ToLower() == "guardar")
-            {
-                // Implementar la lógica de guardar aquí
-                Console.WriteLine("Guardando partida...");
-                // Guardar el estado actual del torneo
-                return false;
-            }
-            return true;
-
-        }
-
-        static void GuardarCampeon(Personaje campeon)
-        {
-            HistorialJson historialJson = new HistorialJson();
-            historialJson.GuardarGanador(campeon, 0, "ganadores.json");
+            string respuesta = Console.ReadLine()?.ToLower();
+            return respuesta != "guardar";
         }
     }
+
+    public class EstadoPartida
+    {
+        public List<Personaje> Participantes { get; set; } = new List<Personaje>();
+        public int RondaActual { get; set; }
+        public string FaseTorneo { get; set; } = "cuartos";
+    }
 }
+
+

@@ -14,7 +14,7 @@ namespace EspacioGestionPartida
         {
             var estado = new EstadoPartida
             {
-                Personajes = personajes,
+                Participantes = personajes,
                 FaseTorneo = faseTorneo
             };
 
@@ -22,7 +22,7 @@ namespace EspacioGestionPartida
             File.WriteAllText(nombreArchivo, json);
         }
 
-        // Para cargar la partida
+        // Método para cargar la partida
         public EstadoPartida CargarPartida(string nombreArchivo)
         {
             if (!File.Exists(nombreArchivo))
@@ -31,12 +31,17 @@ namespace EspacioGestionPartida
             string json = File.ReadAllText(nombreArchivo);
             return JsonSerializer.Deserialize<EstadoPartida>(json) ?? new EstadoPartida();
         }
+
+        public bool Existe(string nombreArchivo)
+        {
+            return File.Exists(nombreArchivo) && new FileInfo(nombreArchivo).Length > 0;
+        }
     }
 
     // Clase del estado del juego guardado
     public class EstadoPartida
     {
-        public List<Personaje> Personajes { get; set; } = new List<Personaje>();
+        public List<Personaje> Participantes { get; set; } = new List<Personaje>();
         public string FaseTorneo { get; set; } = "cuartos"; // Estado inicial, puede ser "cuartos", "semis", "final"
     }
 }
