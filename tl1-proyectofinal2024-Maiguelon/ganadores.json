@@ -313,5 +313,20 @@
       "Magia": 0
     },
     "Nivel": 4
+  },
+  {
+    "Nombre": "Leo Lo",
+    "Epiteto": "El Valiente",
+    "Edad": 273,
+    "Clase": "Picaro",
+    "Caracteristicas": {
+      "Velocidad": 4,
+      "Destreza": 7,
+      "Fuerza": 5,
+      "Armadura": 3,
+      "Salud": 145,
+      "Magia": 0
+    },
+    "Nivel": 4
   }
 ]
