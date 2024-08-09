@@ -1,59 +1,59 @@
 {
   "Participantes": [
     {
-      "Nombre": "Annita Hochmuth",
-      "Epiteto": "El Valiente",
-      "Edad": 268,
+      "Nombre": "Bruno Merten",
+      "Epiteto": "El \u00C1gil",
+      "Edad": 187,
+      "Clase": "Guerrero",
+      "Caracteristicas": {
+        "Velocidad": 3,
+        "Destreza": 3,
+        "Fuerza": 4,
+        "Armadura": 5,
+        "Salud": 100,
+        "Magia": 0
+      },
+      "Nivel": 1
+    },
+    {
+      "Nombre": "Sophie Watts",
+      "Epiteto": "El \u00C1gil",
+      "Edad": 245,
       "Clase": "Mago",
       "Caracteristicas": {
         "Velocidad": 3,
-        "Destreza": 4,
-        "Fuerza": 3,
-        "Armadura": 4,
-        "Salud": 115,
-        "Magia": 7
-      },
-      "Nivel": 2
-    },
-    {
-      "Nombre": "Sagar Andrade",
-      "Epiteto": "El Fuerte",
-      "Edad": 156,
-      "Clase": "Guerrero",
-      "Caracteristicas": {
-        "Velocidad": 4,
-        "Destreza": 3,
-        "Fuerza": 6,
-        "Armadura": 5,
-        "Salud": 115,
-        "Magia": 0
-      },
-      "Nivel": 2
-    },
-    {
-      "Nombre": "Joona Rautio",
-      "Epiteto": "El Valiente",
-      "Edad": 218,
-      "Clase": "Picaro",
-      "Caracteristicas": {
-        "Velocidad": 5,
-        "Destreza": 4,
-        "Fuerza": 3,
+        "Destreza": 2,
+        "Fuerza": 2,
         "Armadura": 3,
-        "Salud": 115,
-        "Magia": 0
+        "Salud": 100,
+        "Magia": 6
       },
-      "Nivel": 2
+      "Nivel": 1
     },
     {
-      "Nombre": "Amy James",
-      "Epiteto": "El Sabio",
-      "Edad": 89,
+      "Nombre": "Elif Tazeg\u00FCl",
+      "Epiteto": "El Valiente",
+      "Edad": 36,
+      "Clase": "Mago",
+      "Caracteristicas": {
+        "Velocidad": 3,
+        "Destreza": 2,
+        "Fuerza": 2,
+        "Armadura": 4,
+        "Salud": 100,
+        "Magia": 5
+      },
+      "Nivel": 1
+    },
+    {
+      "Nombre": "Polina Bilodid",
+      "Epiteto": "El Valiente",
+      "Edad": 191,
       "Clase": "Druida",
       "Caracteristicas": {
         "Velocidad": 5,
-        "Destreza": 2,
-        "Fuerza": 3,
+        "Destreza": 3,
+        "Fuerza": 4,
         "Armadura": 2,
         "Salud": 100,
         "Magia": 4
@@ -61,22 +61,67 @@
       "Nivel": 1
     },
     {
-      "Nombre": "Villads Pedersen",
-      "Epiteto": "El Fuerte",
-      "Edad": 233,
+      "Nombre": "Savitha Tipparti",
+      "Epiteto": "El Noble",
+      "Edad": 293,
+      "Clase": "Mago",
+      "Caracteristicas": {
+        "Velocidad": 3,
+        "Destreza": 3,
+        "Fuerza": 2,
+        "Armadura": 4,
+        "Salud": 100,
+        "Magia": 7
+      },
+      "Nivel": 1
+    },
+    {
+      "Nombre": "Maurice Schulze",
+      "Epiteto": "El \u00C1gil",
+      "Edad": 252,
       "Clase": "Picaro",
       "Caracteristicas": {
-        "Velocidad": 5,
-        "Destreza": 5,
+        "Velocidad": 4,
+        "Destreza": 4,
         "Fuerza": 2,
-        "Armadura": 2,
+        "Armadura": 3,
         "Salud": 100,
         "Magia": 0
+      },
+      "Nivel": 1
+    },
+    {
+      "Nombre": "Mike Patterson",
+      "Epiteto": "El Sabio",
+      "Edad": 215,
+      "Clase": "Druida",
+      "Caracteristicas": {
+        "Velocidad": 4,
+        "Destreza": 2,
+        "Fuerza": 3,
+        "Armadura": 3,
+        "Salud": 100,
+        "Magia": 5
+      },
+      "Nivel": 1
+    },
+    {
+      "Nombre": "Marin Vermue",
+      "Epiteto": "El Noble",
+      "Edad": 168,
+      "Clase": "Mago",
+      "Caracteristicas": {
+        "Velocidad": 3,
+        "Destreza": 3,
+        "Fuerza": 2,
+        "Armadura": 4,
+        "Salud": 100,
+        "Magia": 7
       },
       "Nivel": 1
     }
   ],
   "RondaActual": 1,
   "FaseTorneo": "cuartos",
-  "IndiceCombateActual": 3
+  "IndiceCombateActual": 0
 }
