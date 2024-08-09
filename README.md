@@ -2,7 +2,7 @@
 
 ## Descripción del Proyecto
 
-**Bet for Thrones** es un juego de simulación de combate por turnos, ambientado en un torneo ficticio. Los personajes luchan por obtener el trono en un combate a muerte. El juego incluye una amplia variedad de personajes, cada uno con habilidades y ataques únicos.
+**Torneo de Candidatos** es un juego de simulación de combate por turnos, ambientado en un torneo ficticio. Los personajes luchan por obtener el trono en un combate a muerte. El juego incluye una amplia variedad de personajes, cada uno con habilidades y ataques únicos.
 
 ## Características Principales
 
