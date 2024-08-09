@@ -112,7 +112,7 @@ La API devuelve algo así:
     "version": "1.4"
   }
 }
-
+```
 
 De esto extraigo el nombre y lo utilizo para crear personajes. Si hay un error en el llamado a la API, simplemente el personaje toma el nombre de "Combatiente". 
 
