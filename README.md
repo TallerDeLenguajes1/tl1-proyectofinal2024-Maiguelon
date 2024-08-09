@@ -8,7 +8,6 @@
 
 - **Generación de Personajes Aleatoria:** Los personajes se generan aleatoriamente utilizando una API externa que proporciona nombres, junto con epítetos y clases que varían según el tipo de personaje (Mago, Guerrero, Pícaro, Druida).
 - **Sistema de Combate:** Los combates se realizan por turnos, con diferentes ataques y hechizos que se aplican según la clase del personaje.
-- **Apuestas Dinámicas:** Los jugadores pueden apostar en cada combate, con cuotas generadas aleatoriamente que afectan las ganancias.
 - **Historial de Ganadores:** Se guarda un historial de ganadores, con el nombre y epíteto del personaje que ha ganado cada torneo.
 - **Persistencia de Partidas:** Las partidas se pueden guardar y cargar, permitiendo continuar un torneo en progreso.
 
