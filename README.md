@@ -45,7 +45,7 @@ Termina el programa.
 **RandomUser** es la API que utilizo, me da multiples datos de los cuales uso solo el nombre para mis personajes.
 
 La API devuelve algo así:
-
+```C
 {
   "results": [
     {
@@ -112,3 +112,10 @@ La API devuelve algo así:
     "version": "1.4"
   }
 }
+
+
+De esto extraigo el nombre y lo utilizo para crear personajes. Si hay un error en el llamado a la API, simplemente el personaje toma el nombre de "Combatiente". 
+
+## Archivos Json
+
+El programa utiliza archivos Json para almacenar y utilizar datos. Epítetos, que son parte de los jugadores, están en un archivo Json dividido según las clases. Frases de ataque y de hechizos también están en formato Json, y son utilizadas durante el combate. 
