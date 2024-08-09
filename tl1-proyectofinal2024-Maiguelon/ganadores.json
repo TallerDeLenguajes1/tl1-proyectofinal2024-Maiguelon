@@ -133,5 +133,20 @@
       "Magia": 1
     },
     "Nivel": 4
+  },
+  {
+    "Nombre": "Elena Opseth",
+    "Epiteto": "Cazador de Sombras",
+    "Edad": 186,
+    "Clase": "Picaro",
+    "Caracteristicas": {
+      "Velocidad": 7,
+      "Destreza": 6,
+      "Fuerza": 4,
+      "Armadura": 3,
+      "Salud": 145,
+      "Magia": 1
+    },
+    "Nivel": 4
   }
 ]

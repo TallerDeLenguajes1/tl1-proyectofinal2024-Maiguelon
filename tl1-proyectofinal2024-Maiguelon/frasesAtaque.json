@@ -1,19 +1,78 @@
 {
-    "Mago": {
-      "alto": ["El mago {nombre} desata una poderosa explosión mágica.", "El mago {nombre} canaliza una energía arcana devastadora."],
-      "bajo": ["El mago {nombre} lanza una pequeña chispa.", "El mago {nombre} conjura un débil rayo de energía."]
-    },
-    "Guerrero": {
-      "alto": ["El guerrero {nombre} clava su filo en el pecho de su oponente.", "El guerrero {nombre} desata una serie de golpes brutales."],
-      "bajo": ["El guerrero {nombre} falla su ataque, pero logra reponerse y asestarle un golpe con el mango de su arma!", "El guerrero {nombre} hace un corte superficial."]
-    },
-    "Picaro": {
-      "alto": ["El pícaro {nombre} apuñala rápidamente en un punto vital.", "El pícaro {nombre} se mueve como una sombra y ataca con precisión mortal."],
-      "bajo": ["El pícaro {nombre} lanza un golpe rápido que apenas roza a su oponente.", "El pícaro {nombre} hace un ataque ligero y se retira rápidamente."]
-    },
-    "Druida": {
-      "alto": ["El druida {nombre} invoca las fuerzas de la naturaleza para un ataque devastador.", "El druida {nombre} canaliza el poder de la tierra y golpea con una fuerza elemental."],
-      "bajo": ["El druida {nombre} llama a pequeños espíritus de la naturaleza para un ataque.", "El druida {nombre} usa la energía del bosque para un golpe menor."]
-    }
+  "Mago": {
+    "alto": [
+      "El mago {nombre} desata una tormenta de fuego, incinerando todo a su paso.",
+      "El mago {nombre} invoca un rayo desde el cielo, que cae con furia sobre su oponente.",
+      "El mago {nombre} abre un portal a una dimensión arcana, liberando un torrente de energía pura.",
+      "El mago {nombre} conjura una esfera de energía caótica, que explota con una fuerza devastadora.",
+      "El mago {nombre} transforma la realidad, haciendo que el suelo bajo su enemigo se desplome.",
+      "El mago {nombre} manipula el tiempo, ralentizando a su oponente antes de lanzar un ataque imparable.",
+      "El mago {nombre} invoca una lluvia de meteoritos, aplastando a su enemigo con furia celestial.",
+      "El mago {nombre} invoca un dragón de energía pura que devora a su enemigo en un solo golpe.",
+      "El mago {nombre} convierte la sangre de su enemigo en hielo, inmovilizándolo antes de destruirlo.",
+      "El mago {nombre} conjura una tormenta eléctrica que fulmina a su oponente con mil rayos."
+    ],
+    "bajo": [
+      "El mago {nombre} susurra un encantamiento, lanzando una pequeña llama.",
+      "El mago {nombre} lanza un débil chorro de agua mágica, apenas mojando a su enemigo.",
+      "El mago {nombre} conjura un pequeño soplo de viento, que apenas desordena el cabello de su oponente."
+    ]
+  },
+  "Guerrero": {
+    "alto": [
+      "El guerrero {nombre} lanza un ataque devastador, haciendo temblar la tierra bajo sus pies.",
+      "El guerrero {nombre} blande su arma con una fuerza titánica, partiendo a su enemigo en dos.",
+      "El guerrero {nombre} ruge con furia, desatando una ráfaga de golpes imparables.",
+      "El guerrero {nombre} salta en el aire, cayendo con toda su fuerza sobre su oponente.",
+      "El guerrero {nombre} libera una poderosa carga, derribando a su enemigo como una avalancha.",
+      "El guerrero {nombre} gira su espada en un torbellino, cortando todo a su alrededor.",
+      "El guerrero {nombre} aplasta a su enemigo con un golpe de martillo que hace eco en la montaña.",
+      "El guerrero {nombre} desata su furia berserker, golpeando con una fuerza inhumana.",
+      "El guerrero {nombre} atraviesa las defensas de su enemigo con un golpe imparable.",
+      "El guerrero {nombre} invoca la fuerza de los ancestros, asestando un golpe que resuena con poder ancestral."
+    ],
+    "bajo": [
+      "El guerrero {nombre} lanza un corte torpe, que apenas roza a su enemigo.",
+      "El guerrero {nombre} intenta golpear, pero su ataque apenas hace mella en su oponente.",
+      "El guerrero {nombre} se tambalea, lanzando un golpe sin fuerza."
+    ]
+  },
+  "Picaro": {
+    "alto": [
+      "El pícaro {nombre} desliza su daga en la oscuridad, encontrando su objetivo sin fallar.",
+      "El pícaro {nombre} se mueve como un relámpago, golpeando antes de que su enemigo pueda reaccionar.",
+      "El pícaro {nombre} lanza una lluvia de cuchillos, cada uno con una precisión letal.",
+      "El pícaro {nombre} desaparece en una sombra, solo para reaparecer detrás de su enemigo con un golpe mortal.",
+      "El pícaro {nombre} ejecuta un ataque sigiloso, dejando a su enemigo sin aliento.",
+      "El pícaro {nombre} se desliza detrás de su enemigo, asestando un golpe letal en su punto ciego.",
+      "El pícaro {nombre} envenena su daga, infligiendo un dolor agonizante con cada corte.",
+      "El pícaro {nombre} se lanza hacia adelante, clavando su hoja en un punto vital.",
+      "El pícaro {nombre} utiliza su agilidad para evadir y contraatacar con letal precisión.",
+      "El pícaro {nombre} se desliza bajo su enemigo, cortando los tendones y dejándolo indefenso."
+    ],
+    "bajo": [
+      "El pícaro {nombre} lanza una daga, pero solo roza a su oponente.",
+      "El pícaro {nombre} intenta un ataque rápido, pero falla en encontrar su objetivo.",
+      "El pícaro {nombre} realiza un ataque suave, causando poco daño."
+    ]
+  },
+  "Druida": {
+    "alto": [
+      "El druida {nombre} invoca un terremoto, haciendo que el suelo se abra bajo su enemigo.",
+      "El druida {nombre} llama a un ejército de espíritus del bosque para atacar a su oponente.",
+      "El druida {nombre} canaliza la fuerza de un viejo roble, aplastando a su enemigo con ramas gigantes.",
+      "El druida {nombre} invoca una tormenta de raíces y ramas, atrapando y aplastando a su enemigo.",
+      "El druida {nombre} convoca un tifón de hojas afiladas, cortando a su enemigo en mil pedazos.",
+      "El druida {nombre} desata la furia de la naturaleza, convocando un rayo que parte el cielo en dos.",
+      "El druida {nombre} se fusiona con la tierra, liberando un ataque sísmico devastador.",
+      "El druida {nombre} invoca un lobo de energía natural que ataca a su enemigo con ferocidad.",
+      "El druida {nombre} canaliza la energía del sol, lanzando un rayo ardiente sobre su oponente.",
+      "El druida {nombre} invoca a los elementales del bosque, que arrasan con todo a su paso."
+    ],
+    "bajo": [
+      "El druida {nombre} murmura un hechizo, pero solo logra invocar una ligera brisa.",
+      "El druida {nombre} convoca una pequeña ráfaga de viento, que apenas molesta a su enemigo.",
+      "El druida {nombre} intenta convocar la fuerza de la naturaleza, pero solo logra un débil temblor."
+    ]
   }
-  
+}

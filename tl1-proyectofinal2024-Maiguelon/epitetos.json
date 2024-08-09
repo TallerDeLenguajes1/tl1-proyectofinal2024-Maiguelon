@@ -1,7 +1,30 @@
 {
-    "Mago": ["El Sabio", "El Arcano", "El Conjurador"],
-    "Guerrero": ["El Valiente", "El Fuerte", "El Invencible"],
-    "Picaro": ["El Ágil", "El Sigiloso", "El Astuto"],
-    "Druida": ["El Naturalista", "El Sanador", "El Guardián"]
-  }
-  
+  "Mago": [
+    "Sabio", "Arcano", "Conjurador", "Hechicero", "Místico", 
+    "Iluminado", "Encantador", "Alquimista", "Guardián de Secretos", 
+    "Maestro del Caos", "Teúrgo", "Visionario", "Oráculo", "Maestro de Sortilegios", 
+    "Invocador", "Hermético", "Protector de Runas", "Vidente", "Custodio de la Magia", 
+    "Conjurador Supremo"
+  ],
+  "Guerrero": [
+    "Valiente", "Fuerte", "Invencible", "Campeón", "Destructor", 
+    "Conquistador", "Imbatible", "Indomable", "Justiciero", "Defensor", 
+    "Luchador", "Guardián de la Justicia", "Gladiador", "Coloso", "Vengador", 
+    "Guerrero Sagrado", "Paladín", "Temerario", "Cruzado", "Guerrero de Hierro"
+  ],
+  "Picaro": [
+    "Ágil", "Sigiloso", "Astuto", "Sombrío", "Sombra", 
+    "Maestro del Engaño", "Susurrador", "Ladrón de Almas", "Furtivo", 
+    "Cazador de Sombras", "Tramposo", "Escurridizo", "Renegado", 
+    "Maestro del Sigilo", "Infame", "Sin Rostro", "Intrépido", "Veloz", 
+    "Rápido", "Escapista"
+  ],
+  "Druida": [
+    "Naturalista", "Sanador", "Guardián", "Caminante de Bosques", 
+    "Protector de la Vida", "Señor de la Naturaleza", "Custodio de los Bosques", 
+    "Chamán", "Guardián de Espíritus", "Amigo de los Animales", "Guía Espiritual", 
+    "Maestro de las Bestias", "Venerable", "Custodio de la Tierra", 
+    "Espíritu Ancestral", "Vidente Verde", "Conductor de Almas", 
+    "Guardián de la Vida", "Sabio del Bosque"
+  ]
+}
