@@ -1,21 +1,32 @@
-{
-  "Participantes": [
-    {
-      "Nombre": "Vienna Smilde",
-      "Epiteto": "El \u00C1gil",
-      "Edad": 296,
-      "Clase": "Mago",
-      "Caracteristicas": {
-        "Velocidad": 4,
-        "Destreza": 6,
-        "Fuerza": 3,
-        "Armadura": 4,
-        "Salud": 145,
-        "Magia": 8
-      },
-      "Nivel": 4
-    }
-  ],
-  "RondaActual": 0,
-  "FaseTorneo": "ganadores"
-}
+[
+  {
+    "Nombre": "Leonel Benavides",
+    "Epiteto": "El Noble",
+    "Edad": 95,
+    "Clase": "Guerrero",
+    "Caracteristicas": {
+      "Velocidad": 4,
+      "Destreza": 4,
+      "Fuerza": 7,
+      "Armadura": 4,
+      "Salud": 145,
+      "Magia": 0
+    },
+    "Nivel": 4
+  },
+  {
+    "Nombre": "Joaquin Campos",
+    "Epiteto": "El Noble",
+    "Edad": 42,
+    "Clase": "Guerrero",
+    "Caracteristicas": {
+      "Velocidad": 3,
+      "Destreza": 5,
+      "Fuerza": 6,
+      "Armadura": 4,
+      "Salud": 145,
+      "Magia": 2
+    },
+    "Nivel": 4
+  }
+]

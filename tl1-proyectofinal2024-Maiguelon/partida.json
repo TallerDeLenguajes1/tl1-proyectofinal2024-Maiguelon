@@ -1,103 +1,43 @@
 {
   "Participantes": [
     {
-      "Nombre": "Vienna Smilde",
+      "Nombre": "Solomoniya Bulda",
       "Epiteto": "El \u00C1gil",
-      "Edad": 296,
-      "Clase": "Mago",
-      "Caracteristicas": {
-        "Velocidad": 3,
-        "Destreza": 3,
-        "Fuerza": 2,
-        "Armadura": 4,
-        "Salud": 100,
-        "Magia": 7
-      },
-      "Nivel": 1
-    },
-    {
-      "Nombre": "Alicia Murray",
-      "Epiteto": "El Sabio",
-      "Edad": 77,
-      "Clase": "Druida",
-      "Caracteristicas": {
-        "Velocidad": 5,
-        "Destreza": 3,
-        "Fuerza": 2,
-        "Armadura": 2,
-        "Salud": 100,
-        "Magia": 3
-      },
-      "Nivel": 1
-    },
-    {
-      "Nombre": "Malou Hansen",
-      "Epiteto": "El Fuerte",
-      "Edad": 224,
-      "Clase": "Druida",
-      "Caracteristicas": {
-        "Velocidad": 3,
-        "Destreza": 3,
-        "Fuerza": 3,
-        "Armadura": 3,
-        "Salud": 100,
-        "Magia": 4
-      },
-      "Nivel": 1
-    },
-    {
-      "Nombre": "Suzy Mcdonalid",
-      "Epiteto": "El Sabio",
-      "Edad": 50,
-      "Clase": "Druida",
+      "Edad": 92,
+      "Clase": "Picaro",
       "Caracteristicas": {
         "Velocidad": 4,
-        "Destreza": 3,
+        "Destreza": 5,
         "Fuerza": 2,
         "Armadura": 3,
         "Salud": 100,
-        "Magia": 4
+        "Magia": 0
       },
       "Nivel": 1
     },
     {
-      "Nombre": "Svetislav Radivojevi\u0107",
-      "Epiteto": "El Noble",
-      "Edad": 115,
-      "Clase": "Druida",
-      "Caracteristicas": {
-        "Velocidad": 3,
-        "Destreza": 3,
-        "Fuerza": 3,
-        "Armadura": 2,
-        "Salud": 100,
-        "Magia": 5
-      },
-      "Nivel": 1
-    },
-    {
-      "Nombre": "Leonel Lenes",
-      "Epiteto": "El Noble",
-      "Edad": 172,
-      "Clase": "Mago",
-      "Caracteristicas": {
-        "Velocidad": 2,
-        "Destreza": 3,
-        "Fuerza": 2,
-        "Armadura": 4,
-        "Salud": 100,
-        "Magia": 5
-      },
-      "Nivel": 1
-    },
-    {
-      "Nombre": "Clemente Cornejo",
+      "Nombre": "Florian Duval",
       "Epiteto": "El Sabio",
-      "Edad": 155,
+      "Edad": 164,
       "Clase": "Guerrero",
       "Caracteristicas": {
-        "Velocidad": 4,
+        "Velocidad": 3,
         "Destreza": 2,
+        "Fuerza": 4,
+        "Armadura": 5,
+        "Salud": 100,
+        "Magia": 0
+      },
+      "Nivel": 1
+    },
+    {
+      "Nombre": "Joaquin Campos",
+      "Epiteto": "El Noble",
+      "Edad": 42,
+      "Clase": "Guerrero",
+      "Caracteristicas": {
+        "Velocidad": 3,
+        "Destreza": 3,
         "Fuerza": 4,
         "Armadura": 4,
         "Salud": 100,
@@ -106,17 +46,77 @@
       "Nivel": 1
     },
     {
-      "Nombre": "Darrell Graham",
+      "Nombre": "Dragojlo Stefanovi\u0107",
       "Epiteto": "El \u00C1gil",
-      "Edad": 36,
+      "Edad": 166,
       "Clase": "Mago",
       "Caracteristicas": {
         "Velocidad": 1,
         "Destreza": 3,
         "Fuerza": 2,
-        "Armadura": 4,
+        "Armadura": 3,
         "Salud": 100,
-        "Magia": 7
+        "Magia": 6
+      },
+      "Nivel": 1
+    },
+    {
+      "Nombre": "Carlos Gallardo",
+      "Epiteto": "El Noble",
+      "Edad": 54,
+      "Clase": "Picaro",
+      "Caracteristicas": {
+        "Velocidad": 5,
+        "Destreza": 3,
+        "Fuerza": 2,
+        "Armadura": 3,
+        "Salud": 100,
+        "Magia": 0
+      },
+      "Nivel": 1
+    },
+    {
+      "Nombre": "Iker Pe\u00F1a",
+      "Epiteto": "El Noble",
+      "Edad": 137,
+      "Clase": "Druida",
+      "Caracteristicas": {
+        "Velocidad": 5,
+        "Destreza": 3,
+        "Fuerza": 3,
+        "Armadura": 2,
+        "Salud": 100,
+        "Magia": 4
+      },
+      "Nivel": 1
+    },
+    {
+      "Nombre": "Lucas S\u00F8rensen",
+      "Epiteto": "El \u00C1gil",
+      "Edad": 53,
+      "Clase": "Druida",
+      "Caracteristicas": {
+        "Velocidad": 5,
+        "Destreza": 2,
+        "Fuerza": 4,
+        "Armadura": 2,
+        "Salud": 100,
+        "Magia": 5
+      },
+      "Nivel": 1
+    },
+    {
+      "Nombre": "Kornelia Sj\u00F8berg",
+      "Epiteto": "El \u00C1gil",
+      "Edad": 160,
+      "Clase": "Guerrero",
+      "Caracteristicas": {
+        "Velocidad": 3,
+        "Destreza": 2,
+        "Fuerza": 4,
+        "Armadura": 5,
+        "Salud": 100,
+        "Magia": 0
       },
       "Nivel": 1
     }

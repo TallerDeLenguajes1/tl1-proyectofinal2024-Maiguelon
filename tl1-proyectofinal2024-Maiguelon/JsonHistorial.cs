@@ -31,12 +31,21 @@ namespace EspacioHistorialJson
         // Método para leer los ganadores desde el archivo JSON
         public List<Personaje> LeerGanadores(string nombreArchivo)
         {
-            if (!File.Exists(nombreArchivo))
-                return new List<Personaje>();
+            try
+            {
+                if (!File.Exists(nombreArchivo))
+                    return new List<Personaje>();
 
-            string json = File.ReadAllText(nombreArchivo);
-            return JsonSerializer.Deserialize<List<Personaje>>(json) ?? new List<Personaje>();
+                string json = File.ReadAllText(nombreArchivo);
+                return JsonSerializer.Deserialize<List<Personaje>>(json) ?? new List<Personaje>();
+            }
+            catch (JsonException ex)
+            {
+                Console.WriteLine("Error al leer el archivo de ganadores: " + ex.Message);
+                return new List<Personaje>(); // Retorna una lista vacía en caso de error
+            }
         }
+
 
         // Método para verificar si un archivo existe y no está vacío
         public bool Existe(string nombreArchivo)

@@ -4,6 +4,7 @@ using EspacioPersonaje;
 using EspacioCombates;
 using EspacioFabricaDePersonajes;
 using EspacioGestionPartida;
+using EspacioHistorialJson;
 
 namespace ProyectoRPG
 {
@@ -95,6 +96,8 @@ namespace ProyectoRPG
 
         static async Task JugarTorneo(EstadoPartida estado, GestionPartida manejadorDePartidas)
         {
+            HistorialJson historialManejador = new HistorialJson();
+
             while (estado.Participantes.Count > 1)
             {
                 Console.WriteLine("Siguiente ronda del torneo...");
@@ -104,9 +107,11 @@ namespace ProyectoRPG
             if (estado.Participantes.Count == 1)
             {
                 Console.WriteLine($"El ganador del torneo es {estado.Participantes[0].Nombre}, {estado.Participantes[0].Epiteto}.");
-                manejadorDePartidas.GuardarPartida(estado.Participantes, "ganadores", "ganadores.json");
+
+                // Guardar el ganador en el historial
+                historialManejador.GuardarGanador(estado.Participantes[0], "ganadores.json");
+
                 Console.WriteLine("Partida guardada.");
-                
                 Console.WriteLine("¿Desea jugar de nuevo? (s/n)");
                 string respuesta = (Console.ReadLine() ?? "").ToLower();
                 if (respuesta != "s")
@@ -117,14 +122,17 @@ namespace ProyectoRPG
             }
         }
 
+
+
         static void MostrarHistorialDeGanadores()
         {
-            GestionPartida manejadorDePartidas = new GestionPartida();
-            if (manejadorDePartidas.Existe("ganadores.json"))
+            HistorialJson historialManejador = new HistorialJson();
+
+            if (historialManejador.Existe("ganadores.json"))
             {
-                var historial = manejadorDePartidas.CargarPartida("ganadores.json").Participantes;
+                var ganadores = historialManejador.LeerGanadores("ganadores.json");
                 Console.WriteLine("Historial de Ganadores:");
-                foreach (var ganador in historial)
+                foreach (var ganador in ganadores)
                 {
                     Console.WriteLine($"{ganador.Epiteto} {ganador.Nombre}");
                 }
@@ -135,6 +143,7 @@ namespace ProyectoRPG
             }
         }
 
+
         static async Task<EstadoPartida> JugarRonda(EstadoPartida estado, GestionPartida manejadorDePartidas)
         {
             List<Personaje> ganadores = new List<Personaje>();
@@ -142,7 +151,7 @@ namespace ProyectoRPG
             for (int i = 0; i < estado.Participantes.Count; i += 2)
             {
                 Console.WriteLine($"Combate entre {estado.Participantes[i].Epiteto} y {estado.Participantes[i + 1].Epiteto}");
-                
+
                 // Ejecuta el combate de manera asíncrona
                 await Task.Run(() => Combates.RealizarCombate(estado.Participantes[i], estado.Participantes[i + 1]));
 
