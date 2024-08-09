@@ -1,19 +1,19 @@
 {
   "Participantes": [
     {
-      "Nombre": "Michelle Young",
-      "Epiteto": "El Valiente",
-      "Edad": 57,
-      "Clase": "Guerrero",
+      "Nombre": "Davi Monteiro",
+      "Epiteto": "El Fuerte",
+      "Edad": 238,
+      "Clase": "Druida",
       "Caracteristicas": {
-        "Velocidad": 3,
-        "Destreza": 5,
-        "Fuerza": 5,
-        "Armadura": 6,
-        "Salud": 26,
-        "Magia": 2
+        "Velocidad": 5,
+        "Destreza": 4,
+        "Fuerza": 4,
+        "Armadura": 4,
+        "Salud": 107,
+        "Magia": 8
       },
-      "Nivel": 4
+      "Nivel": 5
     }
   ],
   "RondaActual": 0,

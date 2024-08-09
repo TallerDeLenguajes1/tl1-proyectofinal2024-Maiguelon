@@ -32,7 +32,6 @@ namespace EspacioCombates
                 ? Datos.ObtenerFraseAtaque(atacante.Clase, "alto")
                 : Datos.ObtenerFraseAtaque(atacante.Clase, "bajo");
 
-            // Reemplazar "{nombre}" con el nombre del atacante
             fraseAtaque = fraseAtaque.Replace("{nombre}", atacante.Nombre);
 
             Console.WriteLine($"{atacante.Nombre} ataca a {defensor.Nombre}: {fraseAtaque}\n");
@@ -56,7 +55,7 @@ namespace EspacioCombates
             string fraseHechizo = Datos.ObtenerFraseHechizo(lanzador.Clase, hechizo.Nombre);
             fraseHechizo = fraseHechizo.Replace("{nombre}", lanzador.Nombre);
 
-            Console.WriteLine($"{lanzador.Nombre} usa {hechizo.Nombre} y causa {hechizo.Danio} puntos de daño a {objetivo.Nombre}: {fraseHechizo}\n");
+            Console.WriteLine($"{lanzador.Nombre} usa {hechizo.Nombre} contra {objetivo.Nombre}: {fraseHechizo}\n");
         }
 
 

@@ -29,7 +29,7 @@ namespace EspacioPersonaje
         public void SubirNivel()
         {
             Nivel++;
-            Caracteristicas.Salud += 15;
+            Caracteristicas.Salud = 100 + (Nivel - 1) * 15;
 
             Random rnd = new();
             for (int i = 0; i < 2; i++)

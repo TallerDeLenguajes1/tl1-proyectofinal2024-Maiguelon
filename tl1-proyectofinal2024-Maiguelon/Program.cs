@@ -87,7 +87,7 @@ namespace ProyectoRPG
             {
                 var personaje = await fabrica.CrearPersonajeAsync();
                 participantes.Add(personaje);
-                Console.WriteLine($"Participante {i + 1}: {personaje.Epiteto} {personaje.Nombre}, {personaje.Edad} años");
+                Console.WriteLine($"Participante {i + 1}: {personaje.Nombre} {personaje.Epiteto} , {personaje.Edad} años, {personaje.Clase}");
             }
 
             return new EstadoPartida { Participantes = participantes, RondaActual = 1 };

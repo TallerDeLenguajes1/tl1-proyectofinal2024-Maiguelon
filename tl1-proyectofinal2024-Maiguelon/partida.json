@@ -1,54 +1,84 @@
 {
   "Participantes": [
     {
-      "Nombre": "\u0110uro Ivkov",
-      "Epiteto": "El Fuerte",
-      "Edad": 81,
-      "Clase": "Guerrero",
-      "Caracteristicas": {
-        "Velocidad": 3,
-        "Destreza": 3,
-        "Fuerza": 4,
-        "Armadura": 5,
-        "Salud": 100,
-        "Magia": 0
-      },
-      "Nivel": 1
-    },
-    {
-      "Nombre": "Otto \u00D8stenstad",
+      "Nombre": "Aribert Hegemann",
       "Epiteto": "El Valiente",
-      "Edad": 134,
+      "Edad": 210,
       "Clase": "Druida",
       "Caracteristicas": {
         "Velocidad": 5,
-        "Destreza": 2,
-        "Fuerza": 4,
-        "Armadura": 3,
-        "Salud": 100,
-        "Magia": 4
+        "Destreza": 3,
+        "Fuerza": 2,
+        "Armadura": 2,
+        "Salud": -12,
+        "Magia": 3
       },
       "Nivel": 1
     },
     {
-      "Nombre": "Jort Koenraadt",
-      "Epiteto": "El Noble",
-      "Edad": 288,
+      "Nombre": "Jerome Murphy",
+      "Epiteto": "El \u00C1gil",
+      "Edad": 37,
       "Clase": "Druida",
       "Caracteristicas": {
-        "Velocidad": 3,
+        "Velocidad": 5,
+        "Destreza": 4,
+        "Fuerza": 5,
+        "Armadura": 3,
+        "Salud": 70,
+        "Magia": 2
+      },
+      "Nivel": 2
+    },
+    {
+      "Nombre": "Davi Monteiro",
+      "Epiteto": "El Fuerte",
+      "Edad": 238,
+      "Clase": "Druida",
+      "Caracteristicas": {
+        "Velocidad": 5,
+        "Destreza": 3,
+        "Fuerza": 3,
+        "Armadura": 2,
+        "Salud": 87,
+        "Magia": 6
+      },
+      "Nivel": 2
+    },
+    {
+      "Nombre": "Mila Sre\u0107kovi\u0107",
+      "Epiteto": "El Valiente",
+      "Edad": 267,
+      "Clase": "Mago",
+      "Caracteristicas": {
+        "Velocidad": 1,
         "Destreza": 2,
         "Fuerza": 2,
-        "Armadura": 2,
-        "Salud": 100,
+        "Armadura": 3,
+        "Salud": -6,
         "Magia": 5
       },
       "Nivel": 1
     },
     {
-      "Nombre": "Tim\u00F3teo Vieira",
-      "Epiteto": "El Noble",
-      "Edad": 201,
+      "Nombre": "Beatriz Rosado",
+      "Epiteto": "El Sabio",
+      "Edad": 44,
+      "Clase": "Mago",
+      "Caracteristicas": {
+        "Velocidad": 2,
+        "Destreza": 2,
+        "Fuerza": 2,
+        "Armadura": 4,
+        "Salud": 100,
+        "Magia": 7
+      },
+      "Nivel": 1
+    },
+    {
+      "Nombre": "Cornelio Benav\u00EDdez",
+      "Epiteto": "El \u00C1gil",
+      "Edad": 148,
       "Clase": "Mago",
       "Caracteristicas": {
         "Velocidad": 3,
@@ -56,44 +86,14 @@
         "Fuerza": 2,
         "Armadura": 4,
         "Salud": 100,
-        "Magia": 6
+        "Magia": 5
       },
       "Nivel": 1
     },
     {
-      "Nombre": "Alexis Grewal",
-      "Epiteto": "El Valiente",
-      "Edad": 225,
-      "Clase": "Mago",
-      "Caracteristicas": {
-        "Velocidad": 1,
-        "Destreza": 3,
-        "Fuerza": 2,
-        "Armadura": 3,
-        "Salud": 100,
-        "Magia": 6
-      },
-      "Nivel": 1
-    },
-    {
-      "Nombre": "Michelle Young",
-      "Epiteto": "El Valiente",
-      "Edad": 57,
-      "Clase": "Guerrero",
-      "Caracteristicas": {
-        "Velocidad": 3,
-        "Destreza": 3,
-        "Fuerza": 4,
-        "Armadura": 5,
-        "Salud": 100,
-        "Magia": 0
-      },
-      "Nivel": 1
-    },
-    {
-      "Nombre": "Priyanka Kumar",
-      "Epiteto": "El Sabio",
-      "Edad": 250,
+      "Nombre": "Ilona Ruona",
+      "Epiteto": "El Noble",
+      "Edad": 179,
       "Clase": "Picaro",
       "Caracteristicas": {
         "Velocidad": 5,
@@ -106,17 +106,17 @@
       "Nivel": 1
     },
     {
-      "Nombre": "\u0622\u0631\u0634 \u06A9\u0648\u062A\u06CC",
-      "Epiteto": "El Fuerte",
-      "Edad": 245,
-      "Clase": "Mago",
+      "Nombre": "Abby Obrien",
+      "Epiteto": "El Sabio",
+      "Edad": 286,
+      "Clase": "Guerrero",
       "Caracteristicas": {
-        "Velocidad": 1,
+        "Velocidad": 4,
         "Destreza": 3,
-        "Fuerza": 2,
-        "Armadura": 3,
+        "Fuerza": 4,
+        "Armadura": 5,
         "Salud": 100,
-        "Magia": 7
+        "Magia": 0
       },
       "Nivel": 1
     }
