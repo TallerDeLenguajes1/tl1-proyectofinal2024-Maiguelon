@@ -21,7 +21,10 @@ namespace ProyectoRPG
             {
                 Console.Clear();
                 ImprimirDecoracion();
-                CentrarTexto("Bienvenido al Torneo de Aventureros!", true);
+                CentrarTexto("=====================================", true);
+                CentrarTexto("TORNEO DE CANDIDATOS", true);
+                CentrarTexto("=====================================", true);
+                Console.WriteLine();
                 CentrarTexto("1. Nueva Partida", true);
                 CentrarTexto("2. Cargar Partida", true);
                 CentrarTexto("3. Mostrar Historial de Ganadores", true);
@@ -99,12 +102,20 @@ namespace ProyectoRPG
             List<Personaje> participantes = new List<Personaje>();
             FabricaDePersonajes fabrica = new FabricaDePersonajes();
 
+            Console.Clear();
+            ImprimirDecoracion();
+            CentrarTexto("Los siguientes candidatos lucharán por el trono:", true);
+            ImprimirDecoracion();
+
             for (int i = 0; i < 8; i++)
             {
                 var personaje = await fabrica.CrearPersonajeAsync();
-                CentrarTexto($"Participante {i + 1}: {personaje.Nombre} {personaje.Epiteto} , {personaje.Edad} años, {personaje.Clase}");
                 participantes.Add(personaje);
+                CentrarTexto($"Participante {i + 1}: {personaje.Nombre} {personaje.Epiteto} , {personaje.Edad} años, {personaje.Clase}\n");
             }
+
+            Console.WriteLine();
+            ImprimirDecoracion();
 
             return new EstadoPartida { Participantes = participantes, RondaActual = 1 };
         }
@@ -118,12 +129,11 @@ namespace ProyectoRPG
                 if (estado.Participantes.Count == 4 && estado.FaseTorneo != "semifinales")
                 {
                     estado.FaseTorneo = "semifinales";
-                    estado.IndiceCombateActual = 0; // Reiniciar índice al comenzar una nueva fase
+                    estado.IndiceCombateActual = 0; // Reiniciar índice al zar una nueva fase
                 }
                 else if (estado.Participantes.Count == 2 && estado.FaseTorneo != "final")
                 {
                     estado.FaseTorneo = "final";
-                    estado.IndiceCombateActual = 0; // Reiniciar índice al comenzar una nueva fase
                 }
 
                 if (estado.IndiceCombateActual < estado.Participantes.Count / 2)
@@ -155,12 +165,26 @@ namespace ProyectoRPG
 
             if (estado.Participantes.Count == 1)
             {
-                Console.WriteLine($"El ganador del torneo es {estado.Participantes[0].Nombre}, {estado.Participantes[0].Epiteto}.");
+                ImprimirDecoracion();
+
+                string mensajeGanador = "¡EL GANADOR DEL TRONO ES!";
+                CentrarTexto(mensajeGanador, true);
+                Console.WriteLine();
+                Console.ForegroundColor = ConsoleColor.Yellow; // Color dorado
+
+                string textoGanador = $"{estado.Participantes[0].Nombre} {estado.Participantes[0].Epiteto}";
+                CentrarTexto(textoGanador, true);
+
+                Console.ResetColor();
                 historialManejador.GuardarGanador(estado.Participantes[0], "ganadores.json");
-                Console.WriteLine("Partida guardada.");
-                Console.WriteLine("Gracias por jugar. ¡Hasta la próxima!");
+                Console.WriteLine();
+                CentrarTexto("¡Gracias por jugar!", true);
+                ImprimirDecoracion();
+
+                Console.WriteLine();
                 Environment.Exit(0); // Salir del programa después de la final
             }
+
         }
 
         static void MostrarHistorialDeGanadores()
@@ -191,7 +215,7 @@ namespace ProyectoRPG
                 CentrarTexto($"{estado.FaseTorneo} - Combate {estado.IndiceCombateActual + 1}: {estado.Participantes[i].Epiteto} vs {estado.Participantes[i + 1].Epiteto}");
 
                 // Ejecuta el combate de manera asíncrona
-                await Task.Run(() => RealizarCombateConColor(estado.Participantes[i], estado.Participantes[i + 1]));
+                await Task.Run(() => Combates.RealizarCombate(estado.Participantes[i], estado.Participantes[i + 1]));
 
                 if (estado.Participantes[i].Caracteristicas.Salud > 0)
                 {
@@ -226,41 +250,6 @@ namespace ProyectoRPG
             return estado;
         }
 
-        static void RealizarCombateConColor(Personaje personaje1, Personaje personaje2)
-        {
-            // Determina el color para el personaje1
-            Console.ForegroundColor = ObtenerColorClase(personaje1.Clase);
-            Console.WriteLine($"{personaje1.Nombre} ({personaje1.Epiteto}) ataca a {personaje2.Nombre} ({personaje2.Epiteto})!");
-
-            // Aquí iría la lógica del combate y la descripción de los ataques de personaje1
-            Console.WriteLine($"El {personaje1.Clase} {personaje1.Nombre} lanza un ataque devastador contra {personaje2.Nombre}!");
-
-            // Determina el color para el personaje2
-            Console.ForegroundColor = ObtenerColorClase(personaje2.Clase);
-            Console.WriteLine($"{personaje2.Nombre} ({personaje2.Epiteto}) contraataca!");
-
-            // Aquí iría la lógica del combate y la descripción de los ataques de personaje2
-            Console.WriteLine($"El {personaje2.Clase} {personaje2.Nombre} responde con un golpe certero!");
-
-            // Restablece el color de la consola
-            Console.ResetColor();
-
-            // Simula el combate y determina el ganador
-            Combates.RealizarCombate(personaje1, personaje2);
-        }
-
-        static ConsoleColor ObtenerColorClase(string clase)
-        {
-            return clase.ToLower() switch
-            {
-                "guerrero" => ConsoleColor.Red,
-                "mago" => ConsoleColor.Blue,
-                "picaro" => ConsoleColor.Green,
-                "druida" => ConsoleColor.Yellow,
-                _ => ConsoleColor.White,
-            };
-        }
-
         static bool PreguntarSiGuardar()
         {
             while (true)
@@ -283,4 +272,3 @@ namespace ProyectoRPG
         }
     }
 }
-

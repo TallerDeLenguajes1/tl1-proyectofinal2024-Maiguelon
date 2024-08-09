@@ -1,69 +1,9 @@
 {
   "Participantes": [
     {
-      "Nombre": "Jane Gon\u00E7alves",
+      "Nombre": "Svetlana Baki\u0107",
       "Epiteto": "El Valiente",
-      "Edad": 177,
-      "Clase": "Guerrero",
-      "Caracteristicas": {
-        "Velocidad": 4,
-        "Destreza": 2,
-        "Fuerza": 4,
-        "Armadura": 5,
-        "Salud": 100,
-        "Magia": 0
-      },
-      "Nivel": 1
-    },
-    {
-      "Nombre": "Leo Lo",
-      "Epiteto": "El Valiente",
-      "Edad": 273,
-      "Clase": "Picaro",
-      "Caracteristicas": {
-        "Velocidad": 4,
-        "Destreza": 5,
-        "Fuerza": 2,
-        "Armadura": 2,
-        "Salud": 100,
-        "Magia": 0
-      },
-      "Nivel": 1
-    },
-    {
-      "Nombre": "Ricky Pierce",
-      "Epiteto": "El \u00C1gil",
-      "Edad": 279,
-      "Clase": "Druida",
-      "Caracteristicas": {
-        "Velocidad": 4,
-        "Destreza": 2,
-        "Fuerza": 2,
-        "Armadura": 2,
-        "Salud": 100,
-        "Magia": 5
-      },
-      "Nivel": 1
-    },
-    {
-      "Nombre": "Marshall Montgomery",
-      "Epiteto": "El \u00C1gil",
-      "Edad": 200,
-      "Clase": "Mago",
-      "Caracteristicas": {
-        "Velocidad": 2,
-        "Destreza": 3,
-        "Fuerza": 2,
-        "Armadura": 3,
-        "Salud": 100,
-        "Magia": 5
-      },
-      "Nivel": 1
-    },
-    {
-      "Nombre": "Nihal T\u00FCrkdo\u011Fan",
-      "Epiteto": "El Sabio",
-      "Edad": 219,
+      "Edad": 212,
       "Clase": "Guerrero",
       "Caracteristicas": {
         "Velocidad": 3,
@@ -76,9 +16,9 @@
       "Nivel": 1
     },
     {
-      "Nombre": "Giray Baykam",
-      "Epiteto": "El Sabio",
-      "Edad": 207,
+      "Nombre": "Eugenia Navarro",
+      "Epiteto": "El Noble",
+      "Edad": 180,
       "Clase": "Mago",
       "Caracteristicas": {
         "Velocidad": 2,
@@ -91,9 +31,9 @@
       "Nivel": 1
     },
     {
-      "Nombre": "Bar\u0131\u015F Ak\u0131\u015F\u0131k",
-      "Epiteto": "El Valiente",
-      "Edad": 150,
+      "Nombre": "Miguel Navarro",
+      "Epiteto": "El Fuerte",
+      "Edad": 88,
       "Clase": "Mago",
       "Caracteristicas": {
         "Velocidad": 3,
@@ -101,22 +41,82 @@
         "Fuerza": 2,
         "Armadura": 4,
         "Salud": 100,
-        "Magia": 7
+        "Magia": 5
       },
       "Nivel": 1
     },
     {
-      "Nombre": "Efe D\u00FC\u015Fenkalkar",
-      "Epiteto": "El Valiente",
-      "Edad": 216,
+      "Nombre": "Phoebe Fleming",
+      "Epiteto": "El \u00C1gil",
+      "Edad": 125,
+      "Clase": "Picaro",
+      "Caracteristicas": {
+        "Velocidad": 4,
+        "Destreza": 4,
+        "Fuerza": 2,
+        "Armadura": 3,
+        "Salud": 100,
+        "Magia": 0
+      },
+      "Nivel": 1
+    },
+    {
+      "Nombre": "Rafael Lilleengen",
+      "Epiteto": "El Fuerte",
+      "Edad": 32,
       "Clase": "Mago",
       "Caracteristicas": {
         "Velocidad": 1,
         "Destreza": 2,
         "Fuerza": 2,
-        "Armadura": 4,
+        "Armadura": 3,
         "Salud": 100,
         "Magia": 5
+      },
+      "Nivel": 1
+    },
+    {
+      "Nombre": "Francesco Laurent",
+      "Epiteto": "El Fuerte",
+      "Edad": 20,
+      "Clase": "Picaro",
+      "Caracteristicas": {
+        "Velocidad": 4,
+        "Destreza": 5,
+        "Fuerza": 2,
+        "Armadura": 2,
+        "Salud": 100,
+        "Magia": 0
+      },
+      "Nivel": 1
+    },
+    {
+      "Nombre": "Jesse Davidson",
+      "Epiteto": "El Sabio",
+      "Edad": 90,
+      "Clase": "Druida",
+      "Caracteristicas": {
+        "Velocidad": 3,
+        "Destreza": 3,
+        "Fuerza": 3,
+        "Armadura": 3,
+        "Salud": 100,
+        "Magia": 5
+      },
+      "Nivel": 1
+    },
+    {
+      "Nombre": "Marion Sanders",
+      "Epiteto": "El \u00C1gil",
+      "Edad": 226,
+      "Clase": "Druida",
+      "Caracteristicas": {
+        "Velocidad": 3,
+        "Destreza": 3,
+        "Fuerza": 3,
+        "Armadura": 2,
+        "Salud": 100,
+        "Magia": 4
       },
       "Nivel": 1
     }

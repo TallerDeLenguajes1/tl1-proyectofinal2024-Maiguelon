@@ -67,7 +67,7 @@ namespace EspacioCombates
 
         public static void RealizarCombate(Personaje p1, Personaje p2)
         {
-            Console.WriteLine($"El combate entre {p1.Nombre} y {p2.Nombre} ha comenzado!");
+            Console.WriteLine($"\n\nEl combate entre {p1.Nombre} y {p2.Nombre} ha comenzado!\n");
 
             bool p1Turno = true; // Determinar el turno inicial
 
@@ -102,20 +102,47 @@ namespace EspacioCombates
             // Determinar el ganador y mostrar el resultado
             if (p1.Caracteristicas.Salud > 0)
             {
-                Console.WriteLine($"{p1.Nombre} ha ganado el combate!");
+                CambiarColorSegunClase(p1.Clase);
+                Console.WriteLine($"{p1.Nombre} ha ganado el combate!\n");
+                Console.ResetColor(); // Restablece el color por defecto
                 p1.SubirNivel();
                 p1.Caracteristicas.Salud = 100 + (p1.Nivel - 1) * 15; // Restaurar salud al máximo
             }
             else
             {
-                Console.WriteLine($"{p2.Nombre} ha ganado el combate!");
+                CambiarColorSegunClase(p2.Clase);
+                Console.WriteLine($"{p2.Nombre} ha ganado el combate!\n");
+                Console.ResetColor(); // Restablece el color por defecto
                 p2.SubirNivel();
                 p2.Caracteristicas.Salud = 100 + (p2.Nivel - 1) * 15; // Restaurar salud al máximo
             }
 
-            Console.WriteLine("Fin del combate.");
+            // Método para cambiar el color según la clase
+            void CambiarColorSegunClase(string clase)
+            {
+                switch (clase)
+                {
+                    case "Guerrero":
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        break;
+                    case "Mago":
+                        Console.ForegroundColor = ConsoleColor.Blue;
+                        break;
+                    case "Picaro":
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        break;
+                    case "Druida":
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        break;
+                    default:
+                        Console.ForegroundColor = ConsoleColor.White;
+                        break;
+                }
+            }
+
         }
 
     }
+
 }
 
