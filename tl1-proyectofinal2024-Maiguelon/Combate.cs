@@ -13,10 +13,10 @@ namespace EspacioCombates
         // Método para calcular el daño provocado en cada turno
         private static int CalcularDaño(Personaje atacante, Personaje defensor)
         {
-            int ataque = atacante.Caracteristicas.Destreza * atacante.Caracteristicas.Fuerza * atacante.Nivel;
-            int efectividad = rand.Next(1, 101); // Valor aleatorio entre 1 y 100
-            int defensa = defensor.Caracteristicas.Armadura * defensor.Caracteristicas.Velocidad;
-            int dañoProvocado = (ataque * efectividad - defensa) / 100; // Ajuste para aumentar el daño
+            int ataque = (atacante.Caracteristicas.Destreza * atacante.Caracteristicas.Fuerza * atacante.Nivel);
+            int efectividad = rand.Next(4, 7);
+            int defensa = (defensor.Caracteristicas.Armadura * defensor.Caracteristicas.Velocidad) ;
+            int dañoProvocado = (ataque * efectividad - defensa); 
 
             // Asegurar que el daño no sea negativo
             return Math.Max(dañoProvocado, 1);
@@ -35,8 +35,7 @@ namespace EspacioCombates
             // Reemplazar "{nombre}" con el nombre del atacante
             fraseAtaque = fraseAtaque.Replace("{nombre}", atacante.Nombre);
 
-            Console.WriteLine($"{atacante.Nombre} ataca a {defensor.Nombre}: {fraseAtaque}");
-            Console.WriteLine($"{defensor.Nombre} tiene {defensor.Caracteristicas.Salud} puntos de salud restantes.");
+            Console.WriteLine($"{atacante.Nombre} ataca a {defensor.Nombre}: {fraseAtaque}\n");
         }
 
 
@@ -53,10 +52,13 @@ namespace EspacioCombates
             Hechizo hechizo = ListaHechizos.Hechizos[nivelMagia - 1]; // Ajuste para índices de array
             objetivo.Caracteristicas.Salud -= hechizo.Danio;
 
+            // Reemplazar {nombre} en la frase con el nombre del lanzador
             string fraseHechizo = Datos.ObtenerFraseHechizo(lanzador.Clase, hechizo.Nombre);
-            Console.WriteLine($"{lanzador.Nombre} usa {hechizo.Nombre} y causa {hechizo.Danio} puntos de daño a {objetivo.Nombre}: {fraseHechizo}");
-            Console.WriteLine($"{objetivo.Nombre} tiene {objetivo.Caracteristicas.Salud} puntos de salud restantes.");
+            fraseHechizo = fraseHechizo.Replace("{nombre}", lanzador.Nombre);
+
+            Console.WriteLine($"{lanzador.Nombre} usa {hechizo.Nombre} y causa {hechizo.Danio} puntos de daño a {objetivo.Nombre}: {fraseHechizo}\n");
         }
+
 
         // Método para mostrar el estado actual de un personaje
         private static void MostrarEstado(Personaje personaje)

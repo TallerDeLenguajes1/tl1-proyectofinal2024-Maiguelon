@@ -1,0 +1,21 @@
+{
+  "Participantes": [
+    {
+      "Nombre": "Michelle Young",
+      "Epiteto": "El Valiente",
+      "Edad": 57,
+      "Clase": "Guerrero",
+      "Caracteristicas": {
+        "Velocidad": 3,
+        "Destreza": 5,
+        "Fuerza": 5,
+        "Armadura": 6,
+        "Salud": 26,
+        "Magia": 2
+      },
+      "Nivel": 4
+    }
+  ],
+  "RondaActual": 0,
+  "FaseTorneo": "ganadores"
+}

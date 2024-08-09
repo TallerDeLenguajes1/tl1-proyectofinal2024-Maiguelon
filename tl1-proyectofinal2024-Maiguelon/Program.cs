@@ -98,25 +98,27 @@ namespace ProyectoRPG
             while (estado.Participantes.Count > 1)
             {
                 Console.WriteLine("Siguiente ronda del torneo...");
-                estado = await JugarRonda(estado);
-                if (!PreguntarSiContinuar())
-                {
-                    manejadorDePartidas.GuardarPartida(estado.Participantes, estado.FaseTorneo, "partida.json");
-                    Console.WriteLine("Partida guardada.");
-                    return;
-                }
+                estado = await JugarRonda(estado, manejadorDePartidas);
             }
 
             if (estado.Participantes.Count == 1)
             {
                 Console.WriteLine($"El ganador del torneo es {estado.Participantes[0].Nombre}, {estado.Participantes[0].Epiteto}.");
                 manejadorDePartidas.GuardarPartida(estado.Participantes, "ganadores", "ganadores.json");
+                Console.WriteLine("Partida guardada.");
+                
+                Console.WriteLine("¿Desea jugar de nuevo? (s/n)");
+                string respuesta = (Console.ReadLine() ?? "").ToLower();
+                if (respuesta != "s")
+                {
+                    Console.WriteLine("Gracias por jugar. ¡Hasta la próxima!");
+                    Environment.Exit(0);  // Salir del programa
+                }
             }
         }
 
         static void MostrarHistorialDeGanadores()
         {
-            // Aquí se carga el historial de ganadores y se muestra
             GestionPartida manejadorDePartidas = new GestionPartida();
             if (manejadorDePartidas.Existe("ganadores.json"))
             {
@@ -133,7 +135,7 @@ namespace ProyectoRPG
             }
         }
 
-        static async Task<EstadoPartida> JugarRonda(EstadoPartida estado)
+        static async Task<EstadoPartida> JugarRonda(EstadoPartida estado, GestionPartida manejadorDePartidas)
         {
             List<Personaje> ganadores = new List<Personaje>();
 
@@ -152,6 +154,14 @@ namespace ProyectoRPG
                 {
                     ganadores.Add(estado.Participantes[i + 1]);
                 }
+
+                // Preguntar si desea guardar después de cada combate
+                if (PreguntarSiGuardar())
+                {
+                    manejadorDePartidas.GuardarPartida(estado.Participantes, estado.FaseTorneo, "partida.json");
+                    Console.WriteLine("Partida guardada.");
+                    Environment.Exit(0); // Salir del programa
+                }
             }
 
             estado.Participantes = ganadores;
@@ -159,11 +169,25 @@ namespace ProyectoRPG
             return estado;
         }
 
-        static bool PreguntarSiContinuar()
+        static bool PreguntarSiGuardar()
         {
-            Console.WriteLine("¿Desea continuar el torneo o guardar y salir? (continuar/guardar)");
-            string respuesta = (Console.ReadLine() ?? "").ToLower(); // Asegurar que la entrada no sea nula
-            return respuesta != "guardar";
+            while (true)
+            {
+                Console.WriteLine("¿Desea guardar la partida y salir? (s/n)");
+                string respuesta = (Console.ReadLine() ?? "").ToLower(); // Asegurar que la entrada no sea nula
+                if (respuesta == "s")
+                {
+                    return true; // Guardar y salir
+                }
+                else if (respuesta == "n")
+                {
+                    return false; // Continuar sin guardar
+                }
+                else
+                {
+                    Console.WriteLine("Opción no válida. Por favor, ingrese 's' para guardar o 'n' para continuar.");
+                }
+            }
         }
     }
 
@@ -174,6 +198,8 @@ namespace ProyectoRPG
         public string FaseTorneo { get; set; } = "cuartos";
     }
 }
+
+
 
 
 

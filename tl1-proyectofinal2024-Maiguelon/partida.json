@@ -1,27 +1,27 @@
 {
   "Participantes": [
     {
-      "Nombre": "Kaylee Jennings",
-      "Epiteto": "El \u00C1gil",
-      "Edad": 262,
-      "Clase": "Picaro",
+      "Nombre": "\u0110uro Ivkov",
+      "Epiteto": "El Fuerte",
+      "Edad": 81,
+      "Clase": "Guerrero",
       "Caracteristicas": {
-        "Velocidad": 5,
-        "Destreza": 5,
-        "Fuerza": 2,
-        "Armadura": 2,
+        "Velocidad": 3,
+        "Destreza": 3,
+        "Fuerza": 4,
+        "Armadura": 5,
         "Salud": 100,
         "Magia": 0
       },
       "Nivel": 1
     },
     {
-      "Nombre": "Clara Roy",
+      "Nombre": "Otto \u00D8stenstad",
       "Epiteto": "El Valiente",
-      "Edad": 53,
+      "Edad": 134,
       "Clase": "Druida",
       "Caracteristicas": {
-        "Velocidad": 3,
+        "Velocidad": 5,
         "Destreza": 2,
         "Fuerza": 4,
         "Armadura": 3,
@@ -31,92 +31,92 @@
       "Nivel": 1
     },
     {
-      "Nombre": "Nurdan Pektemek",
-      "Epiteto": "El Valiente",
-      "Edad": 133,
+      "Nombre": "Jort Koenraadt",
+      "Epiteto": "El Noble",
+      "Edad": 288,
       "Clase": "Druida",
       "Caracteristicas": {
-        "Velocidad": 5,
+        "Velocidad": 3,
         "Destreza": 2,
-        "Fuerza": 3,
-        "Armadura": 3,
+        "Fuerza": 2,
+        "Armadura": 2,
         "Salud": 100,
         "Magia": 5
       },
       "Nivel": 1
     },
     {
-      "Nombre": "Mehmet Koyuncu",
-      "Epiteto": "El \u00C1gil",
-      "Edad": 260,
-      "Clase": "Druida",
+      "Nombre": "Tim\u00F3teo Vieira",
+      "Epiteto": "El Noble",
+      "Edad": 201,
+      "Clase": "Mago",
       "Caracteristicas": {
         "Velocidad": 3,
         "Destreza": 3,
-        "Fuerza": 3,
-        "Armadura": 2,
+        "Fuerza": 2,
+        "Armadura": 4,
         "Salud": 100,
-        "Magia": 3
+        "Magia": 6
       },
       "Nivel": 1
     },
     {
-      "Nombre": "Svitolyuba Poloviy",
-      "Epiteto": "El \u00C1gil",
-      "Edad": 107,
-      "Clase": "Picaro",
+      "Nombre": "Alexis Grewal",
+      "Epiteto": "El Valiente",
+      "Edad": 225,
+      "Clase": "Mago",
       "Caracteristicas": {
-        "Velocidad": 4,
-        "Destreza": 5,
+        "Velocidad": 1,
+        "Destreza": 3,
         "Fuerza": 2,
-        "Armadura": 2,
+        "Armadura": 3,
+        "Salud": 100,
+        "Magia": 6
+      },
+      "Nivel": 1
+    },
+    {
+      "Nombre": "Michelle Young",
+      "Epiteto": "El Valiente",
+      "Edad": 57,
+      "Clase": "Guerrero",
+      "Caracteristicas": {
+        "Velocidad": 3,
+        "Destreza": 3,
+        "Fuerza": 4,
+        "Armadura": 5,
         "Salud": 100,
         "Magia": 0
       },
       "Nivel": 1
     },
     {
-      "Nombre": "Santiago Rivas",
-      "Epiteto": "El Fuerte",
-      "Edad": 211,
-      "Clase": "Mago",
-      "Caracteristicas": {
-        "Velocidad": 2,
-        "Destreza": 2,
-        "Fuerza": 2,
-        "Armadura": 4,
-        "Salud": 100,
-        "Magia": 5
-      },
-      "Nivel": 1
-    },
-    {
-      "Nombre": "No\u00E9lie Roy",
-      "Epiteto": "El Fuerte",
-      "Edad": 32,
-      "Clase": "Druida",
-      "Caracteristicas": {
-        "Velocidad": 3,
-        "Destreza": 3,
-        "Fuerza": 3,
-        "Armadura": 3,
-        "Salud": 100,
-        "Magia": 5
-      },
-      "Nivel": 1
-    },
-    {
-      "Nombre": "\u0645\u062D\u0645\u062F\u0639\u0644\u06CC \u0632\u0627\u0631\u0639\u06CC",
-      "Epiteto": "El \u00C1gil",
-      "Edad": 49,
-      "Clase": "Druida",
+      "Nombre": "Priyanka Kumar",
+      "Epiteto": "El Sabio",
+      "Edad": 250,
+      "Clase": "Picaro",
       "Caracteristicas": {
         "Velocidad": 5,
-        "Destreza": 3,
-        "Fuerza": 3,
+        "Destreza": 4,
+        "Fuerza": 2,
         "Armadura": 3,
         "Salud": 100,
-        "Magia": 3
+        "Magia": 0
+      },
+      "Nivel": 1
+    },
+    {
+      "Nombre": "\u0622\u0631\u0634 \u06A9\u0648\u062A\u06CC",
+      "Epiteto": "El Fuerte",
+      "Edad": 245,
+      "Clase": "Mago",
+      "Caracteristicas": {
+        "Velocidad": 1,
+        "Destreza": 3,
+        "Fuerza": 2,
+        "Armadura": 3,
+        "Salud": 100,
+        "Magia": 7
       },
       "Nivel": 1
     }
