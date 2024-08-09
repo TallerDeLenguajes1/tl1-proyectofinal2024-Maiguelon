@@ -1,4 +1,4 @@
-# Bet for Thrones
+# Torneo de Candidatos
 
 ## Descripción del Proyecto
 
