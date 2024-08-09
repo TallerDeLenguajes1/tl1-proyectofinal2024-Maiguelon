@@ -28,5 +28,35 @@
       "Magia": 2
     },
     "Nivel": 4
+  },
+  {
+    "Nombre": "Inka Hempel",
+    "Epiteto": "El Sabio",
+    "Edad": 229,
+    "Clase": "Picaro",
+    "Caracteristicas": {
+      "Velocidad": 6,
+      "Destreza": 7,
+      "Fuerza": 4,
+      "Armadura": 4,
+      "Salud": 160,
+      "Magia": 2
+    },
+    "Nivel": 5
+  },
+  {
+    "Nombre": "Nayeli Santiago",
+    "Epiteto": "El \u00C1gil",
+    "Edad": 274,
+    "Clase": "Picaro",
+    "Caracteristicas": {
+      "Velocidad": 6,
+      "Destreza": 5,
+      "Fuerza": 4,
+      "Armadura": 3,
+      "Salud": 145,
+      "Magia": 1
+    },
+    "Nivel": 4
   }
 ]

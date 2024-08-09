@@ -9,12 +9,14 @@ namespace EspacioGestionPartida
 {
     public class GestionPartida
     {
-        public void GuardarPartida(List<Personaje> personajes, string faseTorneo, string nombreArchivo)
+        public void GuardarPartida(List<Personaje> personajes, string faseTorneo, string nombreArchivo, int rondaActual, int indiceCombateActual)
         {
             var estado = new EstadoPartida
             {
                 Participantes = personajes,
-                FaseTorneo = faseTorneo
+                FaseTorneo = faseTorneo,
+                RondaActual = rondaActual,
+                IndiceCombateActual = indiceCombateActual
             };
 
             string json = JsonSerializer.Serialize(estado, new JsonSerializerOptions { WriteIndented = true });
@@ -35,5 +37,11 @@ namespace EspacioGestionPartida
             return File.Exists(nombreArchivo) && new FileInfo(nombreArchivo).Length > 0;
         }
     }
+    public class EstadoPartida
+    {
+        public List<Personaje> Participantes { get; set; } = new List<Personaje>();
+        public int RondaActual { get; set; } = 1;
+        public string FaseTorneo { get; set; } = "cuartos";
+        public int IndiceCombateActual { get; set; } = 0;
+    }
 }
-

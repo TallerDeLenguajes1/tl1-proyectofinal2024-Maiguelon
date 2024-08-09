@@ -1,122 +1,122 @@
 {
   "Participantes": [
     {
-      "Nombre": "Solomoniya Bulda",
-      "Epiteto": "El \u00C1gil",
-      "Edad": 92,
-      "Clase": "Picaro",
+      "Nombre": "Phillip Welch",
+      "Epiteto": "El Sabio",
+      "Edad": 159,
+      "Clase": "Guerrero",
       "Caracteristicas": {
         "Velocidad": 4,
-        "Destreza": 5,
-        "Fuerza": 2,
-        "Armadura": 3,
-        "Salud": 100,
-        "Magia": 0
+        "Destreza": 2,
+        "Fuerza": 4,
+        "Armadura": 5,
+        "Salud": 115,
+        "Magia": 1
       },
-      "Nivel": 1
+      "Nivel": 2
     },
     {
-      "Nombre": "Florian Duval",
-      "Epiteto": "El Sabio",
-      "Edad": 164,
+      "Nombre": "Bradley Black",
+      "Epiteto": "El Noble",
+      "Edad": 234,
       "Clase": "Guerrero",
       "Caracteristicas": {
         "Velocidad": 3,
         "Destreza": 2,
         "Fuerza": 4,
-        "Armadura": 5,
-        "Salud": 100,
+        "Armadura": 4,
+        "Salud": -4,
         "Magia": 0
       },
       "Nivel": 1
     },
     {
-      "Nombre": "Joaquin Campos",
+      "Nombre": "Marvin Cooper",
       "Epiteto": "El Noble",
-      "Edad": 42,
+      "Edad": 205,
       "Clase": "Guerrero",
       "Caracteristicas": {
-        "Velocidad": 3,
-        "Destreza": 3,
+        "Velocidad": 5,
+        "Destreza": 2,
         "Fuerza": 4,
         "Armadura": 4,
-        "Salud": 100,
+        "Salud": 115,
+        "Magia": 1
+      },
+      "Nivel": 2
+    },
+    {
+      "Nombre": "Noam Gaillard",
+      "Epiteto": "El Valiente",
+      "Edad": 20,
+      "Clase": "Picaro",
+      "Caracteristicas": {
+        "Velocidad": 4,
+        "Destreza": 4,
+        "Fuerza": 2,
+        "Armadura": 3,
+        "Salud": -20,
         "Magia": 0
       },
       "Nivel": 1
     },
     {
-      "Nombre": "Dragojlo Stefanovi\u0107",
-      "Epiteto": "El \u00C1gil",
-      "Edad": 166,
+      "Nombre": "Brajan Lu\u010Di\u0107",
+      "Epiteto": "El Noble",
+      "Edad": 103,
       "Clase": "Mago",
       "Caracteristicas": {
-        "Velocidad": 1,
+        "Velocidad": 4,
         "Destreza": 3,
         "Fuerza": 2,
+        "Armadura": 4,
+        "Salud": 115,
+        "Magia": 8
+      },
+      "Nivel": 2
+    },
+    {
+      "Nombre": "Amy Fletcher",
+      "Epiteto": "El Sabio",
+      "Edad": 86,
+      "Clase": "Mago",
+      "Caracteristicas": {
+        "Velocidad": 3,
+        "Destreza": 2,
+        "Fuerza": 2,
         "Armadura": 3,
-        "Salud": 100,
-        "Magia": 6
+        "Salud": -11,
+        "Magia": 7
       },
       "Nivel": 1
     },
     {
-      "Nombre": "Carlos Gallardo",
-      "Epiteto": "El Noble",
-      "Edad": 54,
+      "Nombre": "Nayeli Santiago",
+      "Epiteto": "El \u00C1gil",
+      "Edad": 274,
       "Clase": "Picaro",
       "Caracteristicas": {
         "Velocidad": 5,
-        "Destreza": 3,
+        "Destreza": 4,
         "Fuerza": 2,
-        "Armadura": 3,
+        "Armadura": 2,
         "Salud": 100,
         "Magia": 0
       },
       "Nivel": 1
     },
     {
-      "Nombre": "Iker Pe\u00F1a",
-      "Epiteto": "El Noble",
-      "Edad": 137,
+      "Nombre": "Tuyet Lohuis",
+      "Epiteto": "El Sabio",
+      "Edad": 30,
       "Clase": "Druida",
       "Caracteristicas": {
-        "Velocidad": 5,
-        "Destreza": 3,
+        "Velocidad": 4,
+        "Destreza": 2,
         "Fuerza": 3,
         "Armadura": 2,
         "Salud": 100,
         "Magia": 4
-      },
-      "Nivel": 1
-    },
-    {
-      "Nombre": "Lucas S\u00F8rensen",
-      "Epiteto": "El \u00C1gil",
-      "Edad": 53,
-      "Clase": "Druida",
-      "Caracteristicas": {
-        "Velocidad": 5,
-        "Destreza": 2,
-        "Fuerza": 4,
-        "Armadura": 2,
-        "Salud": 100,
-        "Magia": 5
-      },
-      "Nivel": 1
-    },
-    {
-      "Nombre": "Kornelia Sj\u00F8berg",
-      "Epiteto": "El \u00C1gil",
-      "Edad": 160,
-      "Clase": "Guerrero",
-      "Caracteristicas": {
-        "Velocidad": 3,
-        "Destreza": 2,
-        "Fuerza": 4,
-        "Armadura": 5,
-        "Salud": 100,
-        "Magia": 0
       },
       "Nivel": 1
     }

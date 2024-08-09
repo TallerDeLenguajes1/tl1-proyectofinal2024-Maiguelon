@@ -199,13 +199,6 @@ namespace ProyectoRPG
             }
         }
     }
-
-    public class EstadoPartida
-    {
-        public List<Personaje> Participantes { get; set; } = new List<Personaje>();
-        public int RondaActual { get; set; }
-        public string FaseTorneo { get; set; } = "cuartos";
-    }
 }
 
 
