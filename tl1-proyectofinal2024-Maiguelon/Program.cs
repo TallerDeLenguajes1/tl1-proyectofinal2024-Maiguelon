@@ -96,33 +96,47 @@ namespace ProyectoRPG
         }
 
         static async Task JugarTorneo(EstadoPartida estado, GestionPartida manejadorDePartidas)
+{
+    HistorialJson historialManejador = new HistorialJson();
+
+    while (estado.Participantes.Count > 1)
+    {
+        // Verificar si ya se completaron todos los combates en la fase actual
+        if (estado.IndiceCombateActual >= estado.Participantes.Count / 2)
         {
-            HistorialJson historialManejador = new HistorialJson();
+            Console.WriteLine("Todos los combates de esta fase ya se han completado.");
+            estado.RondaActual++;
+            estado.IndiceCombateActual = 0;
 
-            while (estado.Participantes.Count > 1)
+            // Verifica si la fase del torneo debe cambiar
+            if (estado.Participantes.Count == 4)
             {
-                Console.WriteLine("Siguiente ronda del torneo...");
-                estado = await JugarRonda(estado, manejadorDePartidas);
+                estado.FaseTorneo = "semifinales";
             }
-
-            if (estado.Participantes.Count == 1)
+            else if (estado.Participantes.Count == 2)
+            {
+                estado.FaseTorneo = "final";
+            }
+            else if (estado.Participantes.Count == 1)
             {
                 Console.WriteLine($"El ganador del torneo es {estado.Participantes[0].Nombre}, {estado.Participantes[0].Epiteto}.");
-
-                // Guardar el ganador en el historial
                 historialManejador.GuardarGanador(estado.Participantes[0], "ganadores.json");
-
                 Console.WriteLine("Partida guardada.");
-                Console.WriteLine("¿Desea jugar de nuevo? (s/n)");
-                string respuesta = (Console.ReadLine() ?? "").ToLower();
-                if (respuesta != "s")
-                {
-                    Console.WriteLine("Gracias por jugar. ¡Hasta la próxima!");
-                    Environment.Exit(0);  // Salir del programa
-                }
+                return; // Salir del método ya que el torneo ha terminado
             }
         }
 
+        Console.WriteLine($"Fase actual: {estado.FaseTorneo}, Combate {estado.IndiceCombateActual + 1}");
+        estado = await JugarRonda(estado, manejadorDePartidas);
+    }
+
+    if (estado.Participantes.Count == 1)
+    {
+        Console.WriteLine($"El ganador del torneo es {estado.Participantes[0].Nombre}, {estado.Participantes[0].Epiteto}.");
+        historialManejador.GuardarGanador(estado.Participantes[0], "ganadores.json");
+        Console.WriteLine("Partida guardada.");
+    }
+}
 
 
         static void MostrarHistorialDeGanadores()
@@ -144,18 +158,29 @@ namespace ProyectoRPG
             }
         }
 
-
         static async Task<EstadoPartida> JugarRonda(EstadoPartida estado, GestionPartida manejadorDePartidas)
         {
             List<Personaje> ganadores = new List<Personaje>();
 
+            // Verifica si la fase del torneo debe cambiar
+            if (estado.Participantes.Count == 4)
+            {
+                estado.FaseTorneo = "semifinales";
+            }
+            else if (estado.Participantes.Count == 2)
+            {
+                estado.FaseTorneo = "final";
+            }
+
+            // Procesar solo los combates necesarios
             for (int i = estado.IndiceCombateActual; i < estado.Participantes.Count; i += 2)
             {
-                Console.WriteLine($"Combate entre {estado.Participantes[i].Epiteto} y {estado.Participantes[i + 1].Epiteto}");
+                Console.WriteLine($"{estado.FaseTorneo} - Combate {i / 2 + 1}: {estado.Participantes[i].Epiteto} vs {estado.Participantes[i + 1].Epiteto}");
 
                 // Ejecuta el combate de manera asíncrona
                 await Task.Run(() => Combates.RealizarCombate(estado.Participantes[i], estado.Participantes[i + 1]));
 
+                // Determinar el ganador del combate y agregarlo a la lista de ganadores
                 if (estado.Participantes[i].Caracteristicas.Salud > 0)
                 {
                     ganadores.Add(estado.Participantes[i]);
@@ -165,20 +190,35 @@ namespace ProyectoRPG
                     ganadores.Add(estado.Participantes[i + 1]);
                 }
 
+                estado.IndiceCombateActual++;
+
                 // Preguntar si desea guardar después de cada combate
-                if (PreguntarSiGuardar())
+                if (estado.FaseTorneo != "final" && PreguntarSiGuardar())
                 {
-                    manejadorDePartidas.GuardarPartida(estado.Participantes, estado.FaseTorneo, "partida.json", estado.RondaActual, i + 2);
+                    // Guardar el estado actual incluyendo tanto los ganadores como los que no han combatido aún
+                    List<Personaje> participantesRestantes = new List<Personaje>(ganadores);
+
+                    // Añadir los personajes que aún no han combatido
+                    for (int j = i + 2; j < estado.Participantes.Count; j++)
+                    {
+                        participantesRestantes.Add(estado.Participantes[j]);
+                    }
+
+                    manejadorDePartidas.GuardarPartida(participantesRestantes, estado.FaseTorneo, "partida.json", estado.RondaActual, estado.IndiceCombateActual);
                     Console.WriteLine("Partida guardada.");
                     Environment.Exit(0); // Salir del programa
                 }
             }
 
+            // Actualizar la lista de participantes con los ganadores
             estado.Participantes = ganadores;
             estado.RondaActual++;
-            estado.IndiceCombateActual = 0; // Reiniciar el índice del combate para la próxima ronda
+            estado.IndiceCombateActual = 0; // Reiniciar para la próxima ronda
+
             return estado;
         }
+
+
 
 
         static bool PreguntarSiGuardar()
@@ -203,6 +243,7 @@ namespace ProyectoRPG
         }
     }
 }
+
 
 
 

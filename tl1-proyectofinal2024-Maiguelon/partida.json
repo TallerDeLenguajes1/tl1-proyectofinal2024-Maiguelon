@@ -1,87 +1,42 @@
 {
   "Participantes": [
     {
-      "Nombre": "Harry Anderson",
-      "Epiteto": "El Sabio",
-      "Edad": 63,
-      "Clase": "Guerrero",
-      "Caracteristicas": {
-        "Velocidad": 3,
-        "Destreza": 2,
-        "Fuerza": 4,
-        "Armadura": 5,
-        "Salud": -14,
-        "Magia": 0
-      },
-      "Nivel": 1
-    },
-    {
-      "Nombre": "\u00C1lvaro Ram\u00EDrez",
-      "Epiteto": "El \u00C1gil",
-      "Edad": 47,
-      "Clase": "Guerrero",
-      "Caracteristicas": {
-        "Velocidad": 3,
-        "Destreza": 4,
-        "Fuerza": 5,
-        "Armadura": 4,
-        "Salud": 115,
-        "Magia": 0
-      },
-      "Nivel": 2
-    },
-    {
-      "Nombre": "Henrika Langenhuijsen",
-      "Epiteto": "El Sabio",
-      "Edad": 79,
-      "Clase": "Picaro",
-      "Caracteristicas": {
-        "Velocidad": 5,
-        "Destreza": 3,
-        "Fuerza": 2,
-        "Armadura": 3,
-        "Salud": 100,
-        "Magia": 0
-      },
-      "Nivel": 1
-    },
-    {
-      "Nombre": "Ege Y\u0131ld\u0131r\u0131m",
+      "Nombre": "Vera Gojkovi\u0107",
       "Epiteto": "El Valiente",
-      "Edad": 58,
-      "Clase": "Guerrero",
+      "Edad": 192,
+      "Clase": "Druida",
       "Caracteristicas": {
         "Velocidad": 4,
         "Destreza": 3,
         "Fuerza": 4,
-        "Armadura": 5,
+        "Armadura": 2,
         "Salud": 100,
-        "Magia": 0
+        "Magia": 5
       },
       "Nivel": 1
     },
     {
-      "Nombre": "Hailey Miller",
+      "Nombre": "Rose Mendoza",
       "Epiteto": "El Fuerte",
-      "Edad": 300,
+      "Edad": 162,
       "Clase": "Mago",
       "Caracteristicas": {
         "Velocidad": 2,
         "Destreza": 2,
         "Fuerza": 2,
-        "Armadura": 3,
+        "Armadura": 4,
         "Salud": 100,
-        "Magia": 7
+        "Magia": 6
       },
       "Nivel": 1
     },
     {
-      "Nombre": "Oscar Patel",
-      "Epiteto": "El Noble",
-      "Edad": 74,
+      "Nombre": "Nicklas J\u00F8rgensen",
+      "Epiteto": "El Fuerte",
+      "Edad": 18,
       "Clase": "Guerrero",
       "Caracteristicas": {
-        "Velocidad": 4,
+        "Velocidad": 3,
         "Destreza": 2,
         "Fuerza": 4,
         "Armadura": 4,
@@ -91,37 +46,82 @@
       "Nivel": 1
     },
     {
-      "Nombre": "Patsy Hunter",
-      "Epiteto": "El Sabio",
-      "Edad": 212,
-      "Clase": "Druida",
+      "Nombre": "Sergio Castro",
+      "Epiteto": "El Fuerte",
+      "Edad": 141,
+      "Clase": "Guerrero",
       "Caracteristicas": {
-        "Velocidad": 5,
-        "Destreza": 2,
+        "Velocidad": 4,
+        "Destreza": 3,
         "Fuerza": 4,
-        "Armadura": 2,
+        "Armadura": 4,
         "Salud": 100,
-        "Magia": 2
+        "Magia": 0
       },
       "Nivel": 1
     },
     {
-      "Nombre": "Alice Brown",
-      "Epiteto": "El Valiente",
-      "Edad": 186,
+      "Nombre": "Julius Marttila",
+      "Epiteto": "El Noble",
+      "Edad": 29,
+      "Clase": "Guerrero",
+      "Caracteristicas": {
+        "Velocidad": 3,
+        "Destreza": 2,
+        "Fuerza": 4,
+        "Armadura": 5,
+        "Salud": 100,
+        "Magia": 0
+      },
+      "Nivel": 1
+    },
+    {
+      "Nombre": "Gina Hart",
+      "Epiteto": "El Noble",
+      "Edad": 127,
       "Clase": "Druida",
       "Caracteristicas": {
         "Velocidad": 4,
-        "Destreza": 3,
-        "Fuerza": 3,
+        "Destreza": 2,
+        "Fuerza": 2,
         "Armadura": 2,
         "Salud": 100,
         "Magia": 5
+      },
+      "Nivel": 1
+    },
+    {
+      "Nombre": "Silje Olsen",
+      "Epiteto": "El Noble",
+      "Edad": 294,
+      "Clase": "Picaro",
+      "Caracteristicas": {
+        "Velocidad": 5,
+        "Destreza": 4,
+        "Fuerza": 2,
+        "Armadura": 3,
+        "Salud": 100,
+        "Magia": 0
+      },
+      "Nivel": 1
+    },
+    {
+      "Nombre": "\u067E\u0627\u0631\u0645\u06CC\u0633 \u0646\u062C\u0627\u062A\u06CC",
+      "Epiteto": "El Noble",
+      "Edad": 129,
+      "Clase": "Picaro",
+      "Caracteristicas": {
+        "Velocidad": 5,
+        "Destreza": 5,
+        "Fuerza": 2,
+        "Armadura": 3,
+        "Salud": 100,
+        "Magia": 0
       },
       "Nivel": 1
     }
   ],
   "RondaActual": 1,
   "FaseTorneo": "cuartos",
-  "IndiceCombateActual": 2
+  "IndiceCombateActual": 0
 }

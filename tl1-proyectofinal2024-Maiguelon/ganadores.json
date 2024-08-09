@@ -88,5 +88,170 @@
       "Magia": 2
     },
     "Nivel": 4
+  },
+  {
+    "Nombre": "Katrine Andersen",
+    "Epiteto": "El Noble",
+    "Edad": 100,
+    "Clase": "Guerrero",
+    "Caracteristicas": {
+      "Velocidad": 4,
+      "Destreza": 3,
+      "Fuerza": 4,
+      "Armadura": 8,
+      "Salud": 130,
+      "Magia": 0
+    },
+    "Nivel": 3
+  },
+  {
+    "Nombre": "Aya Munkvold",
+    "Epiteto": "El Fuerte",
+    "Edad": 139,
+    "Clase": "Druida",
+    "Caracteristicas": {
+      "Velocidad": 7,
+      "Destreza": 3,
+      "Fuerza": 5,
+      "Armadura": 2,
+      "Salud": 130,
+      "Magia": 4
+    },
+    "Nivel": 3
+  },
+  {
+    "Nombre": "Karla Mireles",
+    "Epiteto": "El Noble",
+    "Edad": 46,
+    "Clase": "Druida",
+    "Caracteristicas": {
+      "Velocidad": 5,
+      "Destreza": 3,
+      "Fuerza": 5,
+      "Armadura": 4,
+      "Salud": 130,
+      "Magia": 6
+    },
+    "Nivel": 3
+  },
+  {
+    "Nombre": "Matias Manner",
+    "Epiteto": "El Sabio",
+    "Edad": 290,
+    "Clase": "Druida",
+    "Caracteristicas": {
+      "Velocidad": 5,
+      "Destreza": 3,
+      "Fuerza": 3,
+      "Armadura": 3,
+      "Salud": 130,
+      "Magia": 3
+    },
+    "Nivel": 3
+  },
+  {
+    "Nombre": "Jerome Armstrong",
+    "Epiteto": "El Noble",
+    "Edad": 103,
+    "Clase": "Picaro",
+    "Caracteristicas": {
+      "Velocidad": 7,
+      "Destreza": 5,
+      "Fuerza": 2,
+      "Armadura": 2,
+      "Salud": 130,
+      "Magia": 1
+    },
+    "Nivel": 3
+  },
+  {
+    "Nombre": "Davut Tunaboylu",
+    "Epiteto": "El Sabio",
+    "Edad": 70,
+    "Clase": "Picaro",
+    "Caracteristicas": {
+      "Velocidad": 4,
+      "Destreza": 7,
+      "Fuerza": 2,
+      "Armadura": 5,
+      "Salud": 145,
+      "Magia": 2
+    },
+    "Nivel": 4
+  },
+  {
+    "Nombre": "Allen Washington",
+    "Epiteto": "El Noble",
+    "Edad": 240,
+    "Clase": "Guerrero",
+    "Caracteristicas": {
+      "Velocidad": 4,
+      "Destreza": 4,
+      "Fuerza": 5,
+      "Armadura": 6,
+      "Salud": 145,
+      "Magia": 2
+    },
+    "Nivel": 4
+  },
+  {
+    "Nombre": "Zhdan Kanyuka",
+    "Epiteto": "El Fuerte",
+    "Edad": 203,
+    "Clase": "Guerrero",
+    "Caracteristicas": {
+      "Velocidad": 4,
+      "Destreza": 3,
+      "Fuerza": 8,
+      "Armadura": 5,
+      "Salud": 145,
+      "Magia": 1
+    },
+    "Nivel": 4
+  },
+  {
+    "Nombre": "Domingo G\u00F3mez",
+    "Epiteto": "El \u00C1gil",
+    "Edad": 76,
+    "Clase": "Picaro",
+    "Caracteristicas": {
+      "Velocidad": 5,
+      "Destreza": 8,
+      "Fuerza": 4,
+      "Armadura": 4,
+      "Salud": 145,
+      "Magia": 0
+    },
+    "Nivel": 4
+  },
+  {
+    "Nombre": "Dino Moulin",
+    "Epiteto": "El Fuerte",
+    "Edad": 112,
+    "Clase": "Mago",
+    "Caracteristicas": {
+      "Velocidad": 1,
+      "Destreza": 3,
+      "Fuerza": 3,
+      "Armadura": 4,
+      "Salud": 115,
+      "Magia": 6
+    },
+    "Nivel": 2
+  },
+  {
+    "Nombre": "\u067E\u0627\u0631\u0645\u06CC\u0633 \u0646\u062C\u0627\u062A\u06CC",
+    "Epiteto": "El Noble",
+    "Edad": 129,
+    "Clase": "Picaro",
+    "Caracteristicas": {
+      "Velocidad": 5,
+      "Destreza": 6,
+      "Fuerza": 3,
+      "Armadura": 5,
+      "Salud": 145,
+      "Magia": 2
+    },
+    "Nivel": 4
   }
 ]
