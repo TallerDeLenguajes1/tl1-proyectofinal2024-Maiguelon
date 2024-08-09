@@ -102,7 +102,7 @@ namespace EspacioCombates
             // Determinar el ganador y mostrar el resultado
             if (p1.Caracteristicas.Salud > 0)
             {
-                CambiarColorSegunClase(p1.Clase);
+                Utilidades.CambiarColorSegunClase(p1.Clase);
                 Console.WriteLine($"{p1.Nombre} ha ganado el combate!\n");
                 Console.ResetColor(); // Restablece el color por defecto
                 p1.SubirNivel();
@@ -110,7 +110,7 @@ namespace EspacioCombates
             }
             else
             {
-                CambiarColorSegunClase(p2.Clase);
+                Utilidades.CambiarColorSegunClase(p2.Clase);
                 Console.WriteLine($"{p2.Nombre} ha ganado el combate!\n");
                 Console.ResetColor(); // Restablece el color por defecto
                 p2.SubirNivel();
@@ -118,27 +118,7 @@ namespace EspacioCombates
             }
 
             // Método para cambiar el color según la clase
-            void CambiarColorSegunClase(string clase)
-            {
-                switch (clase)
-                {
-                    case "Guerrero":
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        break;
-                    case "Mago":
-                        Console.ForegroundColor = ConsoleColor.Blue;
-                        break;
-                    case "Picaro":
-                        Console.ForegroundColor = ConsoleColor.Green;
-                        break;
-                    case "Druida":
-                        Console.ForegroundColor = ConsoleColor.Cyan;
-                        break;
-                    default:
-                        Console.ForegroundColor = ConsoleColor.White;
-                        break;
-                }
-            }
+         
 
         }
 

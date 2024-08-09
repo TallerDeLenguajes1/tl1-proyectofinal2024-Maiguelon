@@ -188,23 +188,25 @@ namespace ProyectoRPG
         }
 
         static void MostrarHistorialDeGanadores()
-        {
-            HistorialJson historialManejador = new HistorialJson();
+{
+    HistorialJson historialManejador = new HistorialJson();
 
-            if (historialManejador.Existe("ganadores.json"))
-            {
-                var ganadores = historialManejador.LeerGanadores("ganadores.json");
-                CentrarTexto("Historial de Ganadores:", true);
-                foreach (var ganador in ganadores)
-                {
-                    CentrarTexto($"{ganador.Epiteto} {ganador.Nombre}");
-                }
-            }
-            else
-            {
-                CentrarTexto("No se ha encontrado ningún ganador registrado.");
-            }
+    if (historialManejador.Existe("ganadores.json")) // Si hay ganadores
+    {
+        var ganadores = historialManejador.LeerGanadores("ganadores.json");
+        CentrarTexto("Historial de Ganadores:\n", true);
+        foreach (var ganador in ganadores)
+        {
+            Utilidades.CambiarColorSegunClase(ganador.Clase);
+            CentrarTexto($"{ganador.Epiteto} {ganador.Nombre}\n");
+            Console.ResetColor(); // Restablecer el color por defecto después de cada impresión
         }
+    }
+    else
+    {
+        CentrarTexto("No se ha encontrado ningún ganador registrado.");
+    }
+}
 
         static async Task<EstadoPartida> JugarRonda(EstadoPartida estado, GestionPartida manejadorDePartidas)
         {
