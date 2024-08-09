@@ -8,44 +8,34 @@ namespace EspacioHistorialJson
 {
     public class HistorialJson
     {
-        // Método para guardar un ganador en el archivo JSON
-        public void GuardarGanador(Personaje ganador, double ganancias, string nombreArchivo)
+        // Método para guardar un nuevo ganador en el historial sin sobrescribir los anteriores
+        public void GuardarGanador(Personaje ganador, string nombreArchivo)
         {
-            List<Historial> historial;
+            List<Personaje> ganadores = new List<Personaje>();
 
-            // Si hay historial, lo lee
-            if (Existe(nombreArchivo))
+            // Si el archivo ya existe, leer los ganadores actuales
+            if (File.Exists(nombreArchivo))
             {
-                historial = LeerGanadores(nombreArchivo);
-            }
-            else
-            {
-                historial = new List<Historial>();
+                string jsonExistente = File.ReadAllText(nombreArchivo);
+                ganadores = JsonSerializer.Deserialize<List<Personaje>>(jsonExistente) ?? new List<Personaje>();
             }
 
-            // Agregar nuevo ganador al historial
-            historial.Add(new Historial { Ganador = ganador, Ganancias = ganancias });
+            // Agregar el nuevo ganador al historial
+            ganadores.Add(ganador);
 
-            // Serializar el historial actualizado a JSON y guardarlo
-            string json = JsonSerializer.Serialize(historial);
+            // Guardar el historial actualizado en el archivo JSON
+            string json = JsonSerializer.Serialize(ganadores, new JsonSerializerOptions { WriteIndented = true });
             File.WriteAllText(nombreArchivo, json);
         }
 
-        // Método para leer los ganadores desde JSON
-        public List<Historial> LeerGanadores(string nombreArchivo)
+        // Método para leer los ganadores desde el archivo JSON
+        public List<Personaje> LeerGanadores(string nombreArchivo)
         {
-            // Control para evitar que devuelva NULL
             if (!File.Exists(nombreArchivo))
-                return new List<Historial>();
+                return new List<Personaje>();
 
-            // Leer el contenido del archivo
             string json = File.ReadAllText(nombreArchivo);
-
-            // Deserializar el contenido JSON a una lista de historial
-            var historial = JsonSerializer.Deserialize<List<Historial>>(json);
-
-            // Retorna lista vacía si fuera a devolver NULL
-            return historial ?? new List<Historial>();
+            return JsonSerializer.Deserialize<List<Personaje>>(json) ?? new List<Personaje>();
         }
 
         // Método para verificar si un archivo existe y no está vacío

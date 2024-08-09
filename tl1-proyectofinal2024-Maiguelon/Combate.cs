@@ -13,10 +13,10 @@ namespace EspacioCombates
         // Método para calcular el daño provocado en cada turno
         private static int CalcularDaño(Personaje atacante, Personaje defensor)
         {
-            int ataque = (atacante.Caracteristicas.Destreza * atacante.Caracteristicas.Fuerza * atacante.Nivel);
+            int ataque = (atacante.Caracteristicas.Destreza * atacante.Caracteristicas.Fuerza);
             int efectividad = rand.Next(4, 7);
-            int defensa = (defensor.Caracteristicas.Armadura * defensor.Caracteristicas.Velocidad) ;
-            int dañoProvocado = (ataque * efectividad - defensa); 
+            int defensa = (defensor.Caracteristicas.Armadura * defensor.Caracteristicas.Velocidad);
+            int dañoProvocado = (ataque * efectividad - defensa);
 
             // Asegurar que el daño no sea negativo
             return Math.Max(dañoProvocado, 1);
@@ -65,7 +65,6 @@ namespace EspacioCombates
             Console.WriteLine(personaje);
         }
 
-        // Método principal para realizar un combate
         public static void RealizarCombate(Personaje p1, Personaje p2)
         {
             Console.WriteLine($"El combate entre {p1.Nombre} y {p2.Nombre} ha comenzado!");
@@ -105,15 +104,18 @@ namespace EspacioCombates
             {
                 Console.WriteLine($"{p1.Nombre} ha ganado el combate!");
                 p1.SubirNivel();
+                p1.Caracteristicas.Salud = 100 + (p1.Nivel - 1) * 15; // Restaurar salud al máximo
             }
             else
             {
                 Console.WriteLine($"{p2.Nombre} ha ganado el combate!");
                 p2.SubirNivel();
+                p2.Caracteristicas.Salud = 100 + (p2.Nivel - 1) * 15; // Restaurar salud al máximo
             }
 
             Console.WriteLine("Fin del combate.");
         }
+
     }
 }
 

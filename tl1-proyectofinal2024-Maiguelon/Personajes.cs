@@ -1,5 +1,5 @@
 using System;
-using EspacioCaracteristica; 
+using EspacioCaracteristica;
 
 namespace EspacioPersonaje
 {
@@ -25,11 +25,10 @@ namespace EspacioPersonaje
             Nivel = 1;
         }
 
-        // Método para subir de nivel
         public void SubirNivel()
         {
             Nivel++;
-            Caracteristicas.Salud = 100 + (Nivel - 1) * 15;
+            Caracteristicas.Salud = 100 + (Nivel - 1) * 15; 
 
             Random rnd = new();
             for (int i = 0; i < 2; i++)
@@ -54,7 +53,11 @@ namespace EspacioPersonaje
                         break;
                 }
             }
+
+            // Restaurar la salud al máximo
+            Caracteristicas.Salud = 100 + (Nivel - 1) * 15;
         }
+
 
         // Método para representar el personaje como una cadena de texto
         public override string ToString()

@@ -1,19 +1,19 @@
 {
   "Participantes": [
     {
-      "Nombre": "Davi Monteiro",
-      "Epiteto": "El Fuerte",
-      "Edad": 238,
-      "Clase": "Druida",
+      "Nombre": "Vienna Smilde",
+      "Epiteto": "El \u00C1gil",
+      "Edad": 296,
+      "Clase": "Mago",
       "Caracteristicas": {
-        "Velocidad": 5,
-        "Destreza": 4,
-        "Fuerza": 4,
+        "Velocidad": 4,
+        "Destreza": 6,
+        "Fuerza": 3,
         "Armadura": 4,
-        "Salud": 107,
+        "Salud": 145,
         "Magia": 8
       },
-      "Nivel": 5
+      "Nivel": 4
     }
   ],
   "RondaActual": 0,
