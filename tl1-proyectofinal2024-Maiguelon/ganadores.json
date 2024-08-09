@@ -58,5 +58,35 @@
       "Magia": 1
     },
     "Nivel": 4
+  },
+  {
+    "Nombre": "Volodislav Komarnickiy",
+    "Epiteto": "El Sabio",
+    "Edad": 290,
+    "Clase": "Picaro",
+    "Caracteristicas": {
+      "Velocidad": 5,
+      "Destreza": 5,
+      "Fuerza": 2,
+      "Armadura": 4,
+      "Salud": 115,
+      "Magia": 0
+    },
+    "Nivel": 2
+  },
+  {
+    "Nombre": "Miguel Navarro",
+    "Epiteto": "El \u00C1gil",
+    "Edad": 233,
+    "Clase": "Guerrero",
+    "Caracteristicas": {
+      "Velocidad": 4,
+      "Destreza": 4,
+      "Fuerza": 6,
+      "Armadura": 5,
+      "Salud": 145,
+      "Magia": 2
+    },
+    "Nivel": 4
   }
 ]

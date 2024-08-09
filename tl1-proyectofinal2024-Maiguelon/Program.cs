@@ -39,9 +39,10 @@ namespace ProyectoRPG
                 {
                     case "1":
                         estado = await IniciarNuevoTorneo();
-                        manejadorDePartidas.GuardarPartida(estado.Participantes, "cuartos", "partida.json");
+                        manejadorDePartidas.GuardarPartida(estado.Participantes, "cuartos", "partida.json", 1, 0);
                         await JugarTorneo(estado, manejadorDePartidas);
                         break;
+
 
                     case "2":
                         if (manejadorDePartidas.Existe("partida.json"))
@@ -148,7 +149,7 @@ namespace ProyectoRPG
         {
             List<Personaje> ganadores = new List<Personaje>();
 
-            for (int i = 0; i < estado.Participantes.Count; i += 2)
+            for (int i = estado.IndiceCombateActual; i < estado.Participantes.Count; i += 2)
             {
                 Console.WriteLine($"Combate entre {estado.Participantes[i].Epiteto} y {estado.Participantes[i + 1].Epiteto}");
 
@@ -167,7 +168,7 @@ namespace ProyectoRPG
                 // Preguntar si desea guardar después de cada combate
                 if (PreguntarSiGuardar())
                 {
-                    manejadorDePartidas.GuardarPartida(estado.Participantes, estado.FaseTorneo, "partida.json");
+                    manejadorDePartidas.GuardarPartida(estado.Participantes, estado.FaseTorneo, "partida.json", estado.RondaActual, i + 2);
                     Console.WriteLine("Partida guardada.");
                     Environment.Exit(0); // Salir del programa
                 }
@@ -175,8 +176,10 @@ namespace ProyectoRPG
 
             estado.Participantes = ganadores;
             estado.RondaActual++;
+            estado.IndiceCombateActual = 0; // Reiniciar el índice del combate para la próxima ronda
             return estado;
         }
+
 
         static bool PreguntarSiGuardar()
         {

@@ -1,126 +1,127 @@
 {
   "Participantes": [
     {
-      "Nombre": "Phillip Welch",
+      "Nombre": "Harry Anderson",
       "Epiteto": "El Sabio",
-      "Edad": 159,
+      "Edad": 63,
       "Clase": "Guerrero",
       "Caracteristicas": {
-        "Velocidad": 4,
+        "Velocidad": 3,
         "Destreza": 2,
         "Fuerza": 4,
         "Armadura": 5,
-        "Salud": 115,
-        "Magia": 1
+        "Salud": -14,
+        "Magia": 0
       },
-      "Nivel": 2
+      "Nivel": 1
     },
     {
-      "Nombre": "Bradley Black",
-      "Epiteto": "El Noble",
-      "Edad": 234,
+      "Nombre": "\u00C1lvaro Ram\u00EDrez",
+      "Epiteto": "El \u00C1gil",
+      "Edad": 47,
       "Clase": "Guerrero",
       "Caracteristicas": {
         "Velocidad": 3,
-        "Destreza": 2,
-        "Fuerza": 4,
-        "Armadura": 4,
-        "Salud": -4,
-        "Magia": 0
-      },
-      "Nivel": 1
-    },
-    {
-      "Nombre": "Marvin Cooper",
-      "Epiteto": "El Noble",
-      "Edad": 205,
-      "Clase": "Guerrero",
-      "Caracteristicas": {
-        "Velocidad": 5,
-        "Destreza": 2,
-        "Fuerza": 4,
+        "Destreza": 4,
+        "Fuerza": 5,
         "Armadura": 4,
         "Salud": 115,
-        "Magia": 1
+        "Magia": 0
       },
       "Nivel": 2
     },
     {
-      "Nombre": "Noam Gaillard",
-      "Epiteto": "El Valiente",
-      "Edad": 20,
+      "Nombre": "Henrika Langenhuijsen",
+      "Epiteto": "El Sabio",
+      "Edad": 79,
       "Clase": "Picaro",
       "Caracteristicas": {
-        "Velocidad": 4,
-        "Destreza": 4,
+        "Velocidad": 5,
+        "Destreza": 3,
         "Fuerza": 2,
         "Armadura": 3,
-        "Salud": -20,
+        "Salud": 100,
         "Magia": 0
       },
       "Nivel": 1
     },
     {
-      "Nombre": "Brajan Lu\u010Di\u0107",
-      "Epiteto": "El Noble",
-      "Edad": 103,
-      "Clase": "Mago",
+      "Nombre": "Ege Y\u0131ld\u0131r\u0131m",
+      "Epiteto": "El Valiente",
+      "Edad": 58,
+      "Clase": "Guerrero",
       "Caracteristicas": {
         "Velocidad": 4,
         "Destreza": 3,
-        "Fuerza": 2,
-        "Armadura": 4,
-        "Salud": 115,
-        "Magia": 8
+        "Fuerza": 4,
+        "Armadura": 5,
+        "Salud": 100,
+        "Magia": 0
       },
-      "Nivel": 2
+      "Nivel": 1
     },
     {
-      "Nombre": "Amy Fletcher",
-      "Epiteto": "El Sabio",
-      "Edad": 86,
+      "Nombre": "Hailey Miller",
+      "Epiteto": "El Fuerte",
+      "Edad": 300,
       "Clase": "Mago",
       "Caracteristicas": {
-        "Velocidad": 3,
+        "Velocidad": 2,
         "Destreza": 2,
         "Fuerza": 2,
         "Armadura": 3,
-        "Salud": -11,
+        "Salud": 100,
         "Magia": 7
       },
       "Nivel": 1
     },
     {
-      "Nombre": "Nayeli Santiago",
-      "Epiteto": "El \u00C1gil",
-      "Edad": 274,
-      "Clase": "Picaro",
+      "Nombre": "Oscar Patel",
+      "Epiteto": "El Noble",
+      "Edad": 74,
+      "Clase": "Guerrero",
       "Caracteristicas": {
-        "Velocidad": 5,
-        "Destreza": 4,
-        "Fuerza": 2,
-        "Armadura": 2,
+        "Velocidad": 4,
+        "Destreza": 2,
+        "Fuerza": 4,
+        "Armadura": 4,
         "Salud": 100,
         "Magia": 0
       },
       "Nivel": 1
     },
     {
-      "Nombre": "Tuyet Lohuis",
+      "Nombre": "Patsy Hunter",
       "Epiteto": "El Sabio",
-      "Edad": 30,
+      "Edad": 212,
+      "Clase": "Druida",
+      "Caracteristicas": {
+        "Velocidad": 5,
+        "Destreza": 2,
+        "Fuerza": 4,
+        "Armadura": 2,
+        "Salud": 100,
+        "Magia": 2
+      },
+      "Nivel": 1
+    },
+    {
+      "Nombre": "Alice Brown",
+      "Epiteto": "El Valiente",
+      "Edad": 186,
       "Clase": "Druida",
       "Caracteristicas": {
         "Velocidad": 4,
-        "Destreza": 2,
+        "Destreza": 3,
         "Fuerza": 3,
         "Armadura": 2,
         "Salud": 100,
-        "Magia": 4
+        "Magia": 5
       },
       "Nivel": 1
     }
   ],
-  "RondaActual": 0,
-  "FaseTorneo": "cuartos"
+  "RondaActual": 1,
+  "FaseTorneo": "cuartos",
+  "IndiceCombateActual": 2
 }
