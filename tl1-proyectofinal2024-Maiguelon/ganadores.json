@@ -253,5 +253,65 @@
       "Magia": 2
     },
     "Nivel": 4
+  },
+  {
+    "Nombre": "Micaela Pati\u00F1o",
+    "Epiteto": "El Valiente",
+    "Edad": 207,
+    "Clase": "Druida",
+    "Caracteristicas": {
+      "Velocidad": 6,
+      "Destreza": 4,
+      "Fuerza": 3,
+      "Armadura": 3,
+      "Salud": 115,
+      "Magia": 4
+    },
+    "Nivel": 2
+  },
+  {
+    "Nombre": "Izolda Jevremovi\u0107",
+    "Epiteto": "El Noble",
+    "Edad": 183,
+    "Clase": "Guerrero",
+    "Caracteristicas": {
+      "Velocidad": 3,
+      "Destreza": 3,
+      "Fuerza": 5,
+      "Armadura": 4,
+      "Salud": 115,
+      "Magia": 1
+    },
+    "Nivel": 2
+  },
+  {
+    "Nombre": "Georgina Rivas",
+    "Epiteto": "El \u00C1gil",
+    "Edad": 50,
+    "Clase": "Druida",
+    "Caracteristicas": {
+      "Velocidad": 3,
+      "Destreza": 2,
+      "Fuerza": 5,
+      "Armadura": 2,
+      "Salud": 115,
+      "Magia": 3
+    },
+    "Nivel": 2
+  },
+  {
+    "Nombre": "Vildan Adal",
+    "Epiteto": "El Noble",
+    "Edad": 198,
+    "Clase": "Picaro",
+    "Caracteristicas": {
+      "Velocidad": 5,
+      "Destreza": 5,
+      "Fuerza": 4,
+      "Armadura": 5,
+      "Salud": 145,
+      "Magia": 0
+    },
+    "Nivel": 4
   }
 ]

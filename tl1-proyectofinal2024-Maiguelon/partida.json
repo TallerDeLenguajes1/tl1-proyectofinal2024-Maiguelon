@@ -1,120 +1,75 @@
 {
   "Participantes": [
     {
-      "Nombre": "Vera Gojkovi\u0107",
+      "Nombre": "Annita Hochmuth",
       "Epiteto": "El Valiente",
-      "Edad": 192,
-      "Clase": "Druida",
-      "Caracteristicas": {
-        "Velocidad": 4,
-        "Destreza": 3,
-        "Fuerza": 4,
-        "Armadura": 2,
-        "Salud": 100,
-        "Magia": 5
-      },
-      "Nivel": 1
-    },
-    {
-      "Nombre": "Rose Mendoza",
-      "Epiteto": "El Fuerte",
-      "Edad": 162,
+      "Edad": 268,
       "Clase": "Mago",
       "Caracteristicas": {
-        "Velocidad": 2,
-        "Destreza": 2,
-        "Fuerza": 2,
-        "Armadura": 4,
-        "Salud": 100,
-        "Magia": 6
-      },
-      "Nivel": 1
-    },
-    {
-      "Nombre": "Nicklas J\u00F8rgensen",
-      "Epiteto": "El Fuerte",
-      "Edad": 18,
-      "Clase": "Guerrero",
-      "Caracteristicas": {
         "Velocidad": 3,
-        "Destreza": 2,
-        "Fuerza": 4,
+        "Destreza": 4,
+        "Fuerza": 3,
         "Armadura": 4,
-        "Salud": 100,
-        "Magia": 0
+        "Salud": 115,
+        "Magia": 7
       },
-      "Nivel": 1
+      "Nivel": 2
     },
     {
-      "Nombre": "Sergio Castro",
+      "Nombre": "Sagar Andrade",
       "Epiteto": "El Fuerte",
-      "Edad": 141,
+      "Edad": 156,
       "Clase": "Guerrero",
       "Caracteristicas": {
         "Velocidad": 4,
         "Destreza": 3,
-        "Fuerza": 4,
-        "Armadura": 4,
-        "Salud": 100,
-        "Magia": 0
-      },
-      "Nivel": 1
-    },
-    {
-      "Nombre": "Julius Marttila",
-      "Epiteto": "El Noble",
-      "Edad": 29,
-      "Clase": "Guerrero",
-      "Caracteristicas": {
-        "Velocidad": 3,
-        "Destreza": 2,
-        "Fuerza": 4,
+        "Fuerza": 6,
         "Armadura": 5,
-        "Salud": 100,
+        "Salud": 115,
         "Magia": 0
       },
-      "Nivel": 1
+      "Nivel": 2
     },
     {
-      "Nombre": "Gina Hart",
-      "Epiteto": "El Noble",
-      "Edad": 127,
-      "Clase": "Druida",
-      "Caracteristicas": {
-        "Velocidad": 4,
-        "Destreza": 2,
-        "Fuerza": 2,
-        "Armadura": 2,
-        "Salud": 100,
-        "Magia": 5
-      },
-      "Nivel": 1
-    },
-    {
-      "Nombre": "Silje Olsen",
-      "Epiteto": "El Noble",
-      "Edad": 294,
+      "Nombre": "Joona Rautio",
+      "Epiteto": "El Valiente",
+      "Edad": 218,
       "Clase": "Picaro",
       "Caracteristicas": {
         "Velocidad": 5,
         "Destreza": 4,
-        "Fuerza": 2,
+        "Fuerza": 3,
         "Armadura": 3,
-        "Salud": 100,
+        "Salud": 115,
         "Magia": 0
+      },
+      "Nivel": 2
+    },
+    {
+      "Nombre": "Amy James",
+      "Epiteto": "El Sabio",
+      "Edad": 89,
+      "Clase": "Druida",
+      "Caracteristicas": {
+        "Velocidad": 5,
+        "Destreza": 2,
+        "Fuerza": 3,
+        "Armadura": 2,
+        "Salud": 100,
+        "Magia": 4
       },
       "Nivel": 1
     },
     {
-      "Nombre": "\u067E\u0627\u0631\u0645\u06CC\u0633 \u0646\u062C\u0627\u062A\u06CC",
-      "Epiteto": "El Noble",
-      "Edad": 129,
+      "Nombre": "Villads Pedersen",
+      "Epiteto": "El Fuerte",
+      "Edad": 233,
       "Clase": "Picaro",
       "Caracteristicas": {
         "Velocidad": 5,
         "Destreza": 5,
         "Fuerza": 2,
-        "Armadura": 3,
+        "Armadura": 2,
         "Salud": 100,
         "Magia": 0
       },
@@ -123,5 +78,5 @@
   ],
   "RondaActual": 1,
   "FaseTorneo": "cuartos",
-  "IndiceCombateActual": 0
+  "IndiceCombateActual": 3
 }
